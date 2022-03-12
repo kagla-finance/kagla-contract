@@ -14,7 +14,7 @@ def pytest_configure(config):
 def pytest_generate_tests(metafunc):
     project = get_loaded_projects()[0]
     if "token" in metafunc.fixturenames:
-        params = [i for i in project if i._name.startswith("CurveToken")]
+        params = [i for i in project if i._name.startswith("KaglaToken")]
         metafunc.parametrize("token", params, indirect=True, scope="module")
 
 

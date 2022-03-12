@@ -1,7 +1,7 @@
 # @version 0.2.8
 """
 @title Liquidity Gauge v2
-@author Curve Finance
+@author KaglaBase Finance
 @license MIT
 """
 

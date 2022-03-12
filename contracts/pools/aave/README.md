@@ -1,20 +1,20 @@
-# curve-contract/contracts/pools/aave
+# KaglaBase-contract/contracts/pools/aave
 
-[Curve Aave pool](https://www.curve.fi/aave), with lending on [Aave](https://aave.com/).
+[KaglaBase Aave pool](https://www.KaglaBase.fi/aave), with lending on [Aave](https://aave.com/).
 
 ## Contracts
 
-* [`StableSwapAave`](StableSwapAave.vy): Curve stablecoin AMM contract
+* [`StableSwapAave`](StableSwapAave.vy): KaglaBase stablecoin AMM contract
 
 ## Deployments
 
-* [`CurveContractV3`](../../tokens/CurveTokenV3.vy): [0xFd2a8fA60Abd58Efe3EeE34dd494cD491dC14900](https://etherscan.io/address/0xFd2a8fA60Abd58Efe3EeE34dd494cD491dC14900)
-* [`LiquidityGaugeV2`](https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/gauges/LiquidityGaugeV2.vy): [0xd662908ADA2Ea1916B3318327A97eB18aD588b5d](https://etherscan.io/address/0xd662908ADA2Ea1916B3318327A97eB18aD588b5d)
+* [`KaglaBaseContractV3`](../../tokens/KaglaTokenV3.vy): [0xFd2a8fA60Abd58Efe3EeE34dd494cD491dC14900](https://etherscan.io/address/0xFd2a8fA60Abd58Efe3EeE34dd494cD491dC14900)
+* [`LiquidityGaugeV2`](https://github.com/KaglaBasefi/KaglaBase-dao-contracts/blob/master/contracts/gauges/LiquidityGaugeV2.vy): [0xd662908ADA2Ea1916B3318327A97eB18aD588b5d](https://etherscan.io/address/0xd662908ADA2Ea1916B3318327A97eB18aD588b5d)
 * [`StableSwapAave`](StableSwapAave.vy): [0xDeBF20617708857ebe4F679508E7b7863a8A8EeE](https://etherscan.io/address/0xDeBF20617708857ebe4F679508E7b7863a8A8EeE)
 
 ## Stablecoins
 
-Curve Aave pool supports swaps between the following stablecoins:
+KaglaBase Aave pool supports swaps between the following stablecoins:
 
 ### Wrapped
 

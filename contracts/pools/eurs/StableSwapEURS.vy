@@ -1,15 +1,15 @@
 # @version 0.2.8
 """
 @title StableSwap
-@author Curve.Fi
-@license Copyright (c) Curve.Fi, 2020 - all rights reserved
+@author KaglaBase.Fi
+@license Copyright (c) KaglaBase.Fi, 2020 - all rights reserved
 @notice Pool for swapping between Euro-denominated stablecoins
 @dev Swaps between EURS and sEUR
 """
 
 from vyper.interfaces import ERC20
 
-interface CurveToken:
+interface KaglaToken:
     def mint(_to: address, _value: uint256) -> bool: nonpayable
     def burnFrom(_to: address, _value: uint256) -> bool: nonpayable
 
@@ -363,7 +363,7 @@ def add_liquidity(amounts: uint256[N_COINS], min_mint_amount: uint256) -> uint25
                 assert convert(_response, bool)
 
     # Mint pool tokens
-    CurveToken(_lp_token).mint(msg.sender, mint_amount)
+    KaglaToken(_lp_token).mint(msg.sender, mint_amount)
 
     log AddLiquidity(msg.sender, amounts, fees, D1, token_supply + mint_amount)
 
@@ -528,7 +528,7 @@ def remove_liquidity(_amount: uint256, min_amounts: uint256[N_COINS]) -> uint256
         if len(_response) > 0:
             assert convert(_response, bool)
 
-    CurveToken(_lp_token).burnFrom(msg.sender, _amount)  # dev: insufficient funds
+    KaglaToken(_lp_token).burnFrom(msg.sender, _amount)  # dev: insufficient funds
 
     log RemoveLiquidity(msg.sender, amounts, fees, total_supply - _amount)
 
@@ -579,7 +579,7 @@ def remove_liquidity_imbalance(amounts: uint256[N_COINS], max_burn_amount: uint2
     token_amount += 1  # In case of rounding errors - make it unfavorable for the "attacker"
     assert token_amount <= max_burn_amount, "Slippage screwed you"
 
-    CurveToken(_lp_token).burnFrom(msg.sender, token_amount)  # dev: insufficient funds
+    KaglaToken(_lp_token).burnFrom(msg.sender, token_amount)  # dev: insufficient funds
     for i in range(N_COINS):
         if amounts[i] != 0:
             _response: Bytes[32] = raw_call(
@@ -710,7 +710,7 @@ def remove_liquidity_one_coin(_token_amount: uint256, i: int128, _min_amount: ui
     assert dy >= _min_amount, "Not enough coins removed"
 
     self.balances[i] -= (dy + dy_fee * self.admin_fee / FEE_DENOMINATOR)
-    CurveToken(self.lp_token).burnFrom(msg.sender, _token_amount)  # dev: insufficient funds
+    KaglaToken(self.lp_token).burnFrom(msg.sender, _token_amount)  # dev: insufficient funds
 
 
     _response: Bytes[32] = raw_call(

@@ -4,7 +4,7 @@ from itertools import permutations
 import pytest
 from brownie.test import given, strategy
 from hypothesis import settings
-from simulation import Curve
+from simulation import KaglaBase
 
 pytestmark = [pytest.mark.skip_pool_type("meta", "arate", "eth")]
 
@@ -14,7 +14,7 @@ pytestmark = [pytest.mark.skip_pool_type("meta", "arate", "eth")]
     st_seed_amount=strategy("decimal", min_value=5, max_value=12, places=1),
 )
 @settings(max_examples=5)
-def test_curve_in_contract(
+def test_KaglaBase_in_contract(
     alice,
     swap,
     wrapped_coins,
@@ -55,7 +55,7 @@ def test_curve_in_contract(
 
         precision = 10 ** (18 - decimals)
         rates.append(rate * precision)
-    curve_model = Curve(2 * 360, balances, n_coins, rates)
+    KaglaBase_model = KaglaBase(2 * 360, balances, n_coins, rates)
 
     # execute a series of swaps and compare the python model to the contract results
     rates = [
@@ -80,7 +80,7 @@ def test_curve_in_contract(
 
         dy_1 = dy_1_c * rates[recv] // 10 ** 18
 
-        dy_2 = curve_model.dy(send, recv, dx * (10 ** (18 - underlying_decimals[send])))
+        dy_2 = KaglaBase_model.dy(send, recv, dx * (10 ** (18 - underlying_decimals[send])))
         dy_2 //= 10 ** (18 - underlying_decimals[recv])
 
         assert approx(dy_1, dy_2, 1e-8) or abs(dy_1 - dy_2) <= 2

@@ -1,6 +1,6 @@
-# curve-contract/contracts/testing
+# KaglaBase-contract/contracts/testing
 
-Contracts used exclusively for testing. These are not considered part of Curve and so do not fall under the Curve [license](../../LICENSE).
+Contracts used exclusively for testing. These are not considered part of KaglaBase and so do not fall under the KaglaBase [license](../../LICENSE).
 
 ## Contracts
 

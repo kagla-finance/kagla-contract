@@ -1,26 +1,26 @@
-# curve-contract/contracts/pools/tbtc
+# KaglaBase-contract/contracts/pools/tbtc
 
-[Curve tBTC metapool](https://www.curve.fi/tbtc), allowing swaps via the Curve [sBTC pool](../sbtc).
+[KaglaBase tBTC metapool](https://www.KaglaBase.fi/tbtc), allowing swaps via the KaglaBase [sBTC pool](../sbtc).
 
 ## Contracts
 
 * [`DepositTBTC`](DepositTBTC.vy): Depositor contract, used to wrap underlying tokens prior to depositing them into the pool
-* [`StableSwapTBTC`](StableSwapTBTC.vy): Curve stablecoin AMM contract
+* [`StableSwapTBTC`](StableSwapTBTC.vy): KaglaBase stablecoin AMM contract
 
 ## Deployments
 
-* [`CurveContractV2`](../../tokens/CurveTokenV2.vy): [0x64eda51d3Ad40D56b9dFc5554E06F94e1Dd786Fd](https://etherscan.io/address/0x64eda51d3Ad40D56b9dFc5554E06F94e1Dd786Fd)
+* [`KaglaBaseContractV2`](../../tokens/KaglaTokenV2.vy): [0x64eda51d3Ad40D56b9dFc5554E06F94e1Dd786Fd](https://etherscan.io/address/0x64eda51d3Ad40D56b9dFc5554E06F94e1Dd786Fd)
 * [`DepositTBTC`](DepositTBTC.vy): [0xaa82ca713D94bBA7A89CEAB55314F9EfFEdDc78c](https://etherscan.io/address/0xaa82ca713D94bBA7A89CEAB55314F9EfFEdDc78c)
 * [`LiquidityGaugeReward`](../../gauges/LiquidityGaugeReward.vy): [0x6828bcF74279eE32f2723eC536c22c51Eed383C6](https://etherscan.io/address/0x6828bcF74279eE32f2723eC536c22c51Eed383C6)
 * [`StableSwapTBTC`](StableSwapTBTC.vy): [0xC25099792E9349C7DD09759744ea681C7de2cb66](https://etherscan.io/address/0xC25099792E9349C7DD09759744ea681C7de2cb66)
 
 ## Stablecoins
 
-Curve tBTC metapool utilizes the supports swaps between the following assets:
+KaglaBase tBTC metapool utilizes the supports swaps between the following assets:
 
 ## Direct swaps
 
-Direct swaps are possible between tBTC and the Curve sBTC LP token.
+Direct swaps are possible between tBTC and the KaglaBase sBTC LP token.
 
 * `tBTC`: [0x8dAEBADE922dF735c38C80C7eBD708Af50815fAa](https://etherscan.io/address/0x8dAEBADE922dF735c38C80C7eBD708Af50815fAa)
 * `sbtcCRV`: [0x075b1bb99792c9E1041bA13afEf80C91a1e70fB3](https://etherscan.io/address/0x075b1bb99792c9E1041bA13afEf80C91a1e70fB3)

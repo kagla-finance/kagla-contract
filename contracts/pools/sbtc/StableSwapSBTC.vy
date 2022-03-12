@@ -1,5 +1,5 @@
 # @version 0.1.0b17
-# (c) Curve.Fi, 2020
+# (c) KaglaBase.Fi, 2020
 # Pools for renBTC/wBTC. Ren can potentially change amount of underlying bitcoins
 
 

@@ -1,26 +1,26 @@
-# curve-contract/contracts/pools/bbtc
+# KaglaBase-contract/contracts/pools/bbtc
 
-[Curve bBTC metapool](https://www.curve.fi/bbtc), allowing swaps via the Curve [sBTC pool](../sbtc).
+[KaglaBase bBTC metapool](https://www.KaglaBase.fi/bbtc), allowing swaps via the KaglaBase [sBTC pool](../sbtc).
 
 ## Contracts
 
 * [`DepositBBTC`](DepositBBTC.vy): Depositor contract, used to wrap underlying tokens prior to depositing them into the pool
-* [`StableSwapBBTC`](StableSwapBBTC.vy): Curve stablecoin AMM contract
+* [`StableSwapBBTC`](StableSwapBBTC.vy): KaglaBase stablecoin AMM contract
 
 ## Deployments
 
-* [`CurveContractV2`](../../tokens/CurveTokenV3.vy): [0x410e3E86ef427e30B9235497143881f717d93c2A](https://etherscan.io/address/0x410e3E86ef427e30B9235497143881f717d93c2A)
+* [`KaglaBaseContractV2`](../../tokens/KaglaTokenV3.vy): [0x410e3E86ef427e30B9235497143881f717d93c2A](https://etherscan.io/address/0x410e3E86ef427e30B9235497143881f717d93c2A)
 * [`DepositBBTC`](DepositBBTC.vy): [0xC45b2EEe6e09cA176Ca3bB5f7eEe7C47bF93c756](https://etherscan.io/address/0xC45b2EEe6e09cA176Ca3bB5f7eEe7C47bF93c756)
-* [`LiquidityGaugeV2`](https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/gauges/LiquidityGaugeV2.vy): [0xdFc7AdFa664b08767b735dE28f9E84cd30492aeE](https://etherscan.io/address/0xdFc7AdFa664b08767b735dE28f9E84cd30492aeE)
+* [`LiquidityGaugeV2`](https://github.com/KaglaBasefi/KaglaBase-dao-contracts/blob/master/contracts/gauges/LiquidityGaugeV2.vy): [0xdFc7AdFa664b08767b735dE28f9E84cd30492aeE](https://etherscan.io/address/0xdFc7AdFa664b08767b735dE28f9E84cd30492aeE)
 * [`StableSwapBBTC`](StableSwapBBTC.vy): [0x071c661B4DeefB59E2a3DdB20Db036821eeE8F4b](https://etherscan.io/address/0x071c661B4DeefB59E2a3DdB20Db036821eeE8F4b)
 
 ## Stablecoins
 
-Curve bBTC metapool utilizes the supports swaps between the following assets:
+KaglaBase bBTC metapool utilizes the supports swaps between the following assets:
 
 ## Direct swaps
 
-Direct swaps are possible between bBTC and the Curve sBTC LP token.
+Direct swaps are possible between bBTC and the KaglaBase sBTC LP token.
 
 * `bBTC`: [0x9be89d2a4cd102d8fecc6bf9da793be995c22541](https://etherscan.io/address/0x9be89d2a4cd102d8fecc6bf9da793be995c22541)
 * `sbtcCRV`: [0x075b1bb99792c9E1041bA13afEf80C91a1e70fB3](https://etherscan.io/address/0x075b1bb99792c9E1041bA13afEf80C91a1e70fB3)

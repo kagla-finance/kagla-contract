@@ -1,5 +1,5 @@
 {
-  "lp_contract": "CurveTokenV3",
+  "lp_contract": "KaglaTokenV3",
   "pool_types": ["eth", "crate"],
   "wrapped_contract": "aETH",
   "swap_address": "0xA96A65c051bF88B4095Ee1f2451C2A9d43F53Ae2",
@@ -7,7 +7,7 @@
   "gauge_addresses": ["0x6d10ed2cF043E6fcf51A0e7b4C2Af3Fa06695707"],
   "lp_constructor": {
     "symbol": "ankrCRV",
-    "name": "Curve.fi ETH/aETH"
+    "name": "KaglaBase.fi ETH/aETH"
   },
   "swap_constructor": {
     "_A": 10,

@@ -1,14 +1,14 @@
 # @version 0.2.8
 """
-@title Curve ETH/stETH StableSwap
-@author Curve.Fi
-@license Copyright (c) Curve.Fi, 2020 - all rights reserved
+@title KaglaBase ETH/stETH StableSwap
+@author KaglaBase.Fi
+@license Copyright (c) KaglaBase.Fi, 2020 - all rights reserved
 """
 
 from vyper.interfaces import ERC20
 
 
-interface CurveToken:
+interface KaglaToken:
     def mint(_to: address, _value: uint256) -> bool: nonpayable
     def burnFrom(_to: address, _value: uint256) -> bool: nonpayable
 
@@ -352,7 +352,7 @@ def add_liquidity(amounts: uint256[N_COINS], min_mint_amount: uint256) -> uint25
         assert ERC20(self.coins[1]).transferFrom(msg.sender, self, amounts[1])
 
     # Mint pool tokens
-    CurveToken(lp_token).mint(msg.sender, mint_amount)
+    KaglaToken(lp_token).mint(msg.sender, mint_amount)
 
     log AddLiquidity(msg.sender, amounts, fees, D1, token_supply + mint_amount)
 
@@ -488,7 +488,7 @@ def remove_liquidity(
     amounts: uint256[N_COINS] = self._balances()
     lp_token: address = self.lp_token
     total_supply: uint256 = ERC20(lp_token).totalSupply()
-    CurveToken(lp_token).burnFrom(msg.sender, _amount)  # dev: insufficient funds
+    KaglaToken(lp_token).burnFrom(msg.sender, _amount)  # dev: insufficient funds
 
     for i in range(N_COINS):
         value: uint256 = amounts[i] * _amount / total_supply
@@ -551,7 +551,7 @@ def remove_liquidity_imbalance(
     assert token_amount != 0  # dev: zero tokens burned
     assert token_amount <= _max_burn_amount, "Slippage screwed you"
 
-    CurveToken(lp_token).burnFrom(msg.sender, token_amount)  # dev: insufficient funds
+    KaglaToken(lp_token).burnFrom(msg.sender, token_amount)  # dev: insufficient funds
 
     if _amounts[0] != 0:
         raw_call(msg.sender, b"", value=_amounts[0])
@@ -678,7 +678,7 @@ def remove_liquidity_one_coin(
 
     self.admin_balances[i] += dy_fee * self.admin_fee / FEE_DENOMINATOR
 
-    CurveToken(self.lp_token).burnFrom(msg.sender, _token_amount)  # dev: insufficient funds
+    KaglaToken(self.lp_token).burnFrom(msg.sender, _token_amount)  # dev: insufficient funds
 
     if i == 0:
         raw_call(msg.sender, b"", value=dy)

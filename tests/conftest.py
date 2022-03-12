@@ -66,7 +66,7 @@ def pytest_sessionstart():
                 _pooldata[path.name]["zap_contract"] = zap_contract
 
     # create pooldata for templates
-    lp_contract = sorted(i._name for i in project if i._name.startswith("CurveToken"))[-1]
+    lp_contract = sorted(i._name for i in project if i._name.startswith("KaglaToken"))[-1]
 
     for path in [i for i in project._path.glob("contracts/pool-templates/*") if i.is_dir()]:
         with path.joinpath("pooldata.json").open() as fp:

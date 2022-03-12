@@ -1,8 +1,8 @@
 # @version 0.2.11
 """
-@title Curve aETH Pool Rate Calculator 
-@author Curve.Fi
-@license Copyright (c) Curve.Fi, 2021 - all rights reserved
+@title KaglaBase aETH Pool Rate Calculator 
+@author KaglaBase.Fi
+@license Copyright (c) KaglaBase.Fi, 2021 - all rights reserved
 @notice Logic for calculating exchange rate between aETH -> ETH
 """
 

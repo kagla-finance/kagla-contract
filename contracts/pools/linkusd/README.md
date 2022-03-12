@@ -1,26 +1,26 @@
-# curve-contract/contracts/pools/linkusd
+# KaglaBase-contract/contracts/pools/linkusd
 
-[Curve LINKUSD metapool](https://www.curve.fi/linkusd), allowing swaps via the Curve [tri-pool](../3pool).
+[KaglaBase LINKUSD metapool](https://www.KaglaBase.fi/linkusd), allowing swaps via the KaglaBase [tri-pool](../3pool).
 
 ## Contracts
 
 * [`DepositLinkUSD`](DepositLinkUSD.vy): Depositor contract, used to wrap underlying tokens prior to depositing them into the pool
-* [`StableSwapLinkUSD`](StableSwapLinkUSD.vy): Curve stablecoin AMM contract
+* [`StableSwapLinkUSD`](StableSwapLinkUSD.vy): KaglaBase stablecoin AMM contract
 
 ## Deployments
 
-* [`CurveContractV2`](../../tokens/CurveTokenV2.vy): [0x6D65b498cb23deAba52db31c93Da9BFFb340FB8F](https://etherscan.io/address/0x6D65b498cb23deAba52db31c93Da9BFFb340FB8F)
+* [`KaglaBaseContractV2`](../../tokens/KaglaTokenV2.vy): [0x6D65b498cb23deAba52db31c93Da9BFFb340FB8F](https://etherscan.io/address/0x6D65b498cb23deAba52db31c93Da9BFFb340FB8F)
 * [`DepositLinkUSD`](DepositGUSD.vy): [0x1de7f0866e2c4adAC7b457c58Cc25c8688CDa1f2](https://etherscan.io/address/0x1de7f0866e2c4adAC7b457c58Cc25c8688CDa1f2)
 * [`LiquidityGauge`](../../gauges/LiquidityGauge.vy): [](https://etherscan.io/address/)
 * [`StableSwapLinkUSD`](StableSwapUSDT.vy): [0xE7a24EF0C5e95Ffb0f6684b813A78F2a3AD7D171](https://etherscan.io/address/0xE7a24EF0C5e95Ffb0f6684b813A78F2a3AD7D171)
 
 ## Stablecoins
 
-Curve LINKUSD metapool utilizes the supports swaps between the following assets:
+KaglaBase LINKUSD metapool utilizes the supports swaps between the following assets:
 
 ## Direct swaps
 
-Direct swaps are possible between LINKUSD and the Curve tri-pool LP token.
+Direct swaps are possible between LINKUSD and the KaglaBase tri-pool LP token.
 
 * `LINKUSD`: [0x0E2EC54fC0B509F445631Bf4b91AB8168230C752](https://etherscan.io/address/0x0E2EC54fC0B509F445631Bf4b91AB8168230C752)
 * `3CRV`: [0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490](https://etherscan.io/address/0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490)

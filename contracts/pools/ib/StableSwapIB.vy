@@ -1,8 +1,8 @@
 # @version 0.2.8
 """
-@title Curve IronBank Pool
-@author Curve.Fi
-@license Copyright (c) Curve.Fi, 2021 - all rights reserved
+@title KaglaBase IronBank Pool
+@author KaglaBase.Fi
+@license Copyright (c) KaglaBase.Fi, 2021 - all rights reserved
 @notice Pool for swapping between cyTokens (cyDAI, cyUSDC, cyUSDT)
 """
 
@@ -17,7 +17,7 @@ interface cyToken:
     def supplyRatePerBlock() -> uint256: view
     def accrualBlockNumber() -> uint256: view
 
-interface CurveToken:
+interface KaglaToken:
     def mint(_to: address, _value: uint256) -> bool: nonpayable
     def burnFrom(_to: address, _value: uint256) -> bool: nonpayable
 
@@ -425,7 +425,7 @@ def add_liquidity(
     assert mint_amount >= _min_mint_amount, "Slippage screwed you"
 
     # Mint pool tokens
-    CurveToken(_lp_token).mint(msg.sender, mint_amount)
+    KaglaToken(_lp_token).mint(msg.sender, mint_amount)
 
     log AddLiquidity(msg.sender, amounts, fees, D1, token_supply + mint_amount)
 
@@ -650,7 +650,7 @@ def remove_liquidity(
 
         assert value >= _min_amounts[i]
 
-    CurveToken(_lp_token).burnFrom(msg.sender, _amount)  # Will raise if not enough
+    KaglaToken(_lp_token).burnFrom(msg.sender, _amount)  # Will raise if not enough
 
     log RemoveLiquidity(msg.sender, amounts, empty(uint256[N_COINS]), total_supply - _amount)
 
@@ -715,7 +715,7 @@ def remove_liquidity_imbalance(
     assert token_amount != 0
     assert token_amount <= _max_burn_amount, "Slippage screwed you"
 
-    CurveToken(lp_token).burnFrom(msg.sender, token_amount)  # dev: insufficient funds
+    KaglaToken(lp_token).burnFrom(msg.sender, token_amount)  # dev: insufficient funds
     for i in range(N_COINS):
         amount: uint256 = amounts[i]
         if amount != 0:
@@ -853,7 +853,7 @@ def remove_liquidity_one_coin(
     amount: uint256 = dy[0]
 
     self.balances[i] -= (dy[0] + dy[1] * self.admin_fee / FEE_DENOMINATOR)
-    CurveToken(self.lp_token).burnFrom(msg.sender, _token_amount)  # dev: insufficient funds
+    KaglaToken(self.lp_token).burnFrom(msg.sender, _token_amount)  # dev: insufficient funds
     coin: address = self.coins[i]
     if _use_underlying:
         assert cyToken(coin).redeem(dy[0]) == 0

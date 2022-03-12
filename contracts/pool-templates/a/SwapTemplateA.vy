@@ -1,14 +1,4 @@
 # @version ^0.2.8
-"""
-@title StableSwap
-@author Curve.Fi
-@license Copyright (c) Curve.Fi, 2020 - all rights reserved
-@notice Pool implementation with aToken-style lending
-@dev This contract is only a template, pool-specific constants
-     must be set prior to compiling. Note that this template is
-     currently compatible with aTokens (Aave) and that for other
-     protocols selected parts in the code may need to be changed.
-"""
 
 from vyper.interfaces import ERC20
 
@@ -16,7 +6,7 @@ from vyper.interfaces import ERC20
 interface LendingPool:
     def withdraw(_underlying_asset: address, _amount: uint256, _receiver: address): nonpayable
 
-interface CurveToken:
+interface KaglaToken:
     def totalSupply() -> uint256: view
     def mint(_to: address, _value: uint256) -> bool: nonpayable
     def burnFrom(_to: address, _value: uint256) -> bool: nonpayable
@@ -362,7 +352,7 @@ def calc_token_amount(_amounts: uint256[N_COINS], _is_deposit: bool) -> uint256:
         else:
             coin_balances[i] -= _amounts[i]
     D1: uint256 = self._get_D_precisions(coin_balances, amp)
-    token_amount: uint256 = CurveToken(self.lp_token).totalSupply()
+    token_amount: uint256 = KaglaToken(self.lp_token).totalSupply()
     diff: uint256 = 0
     if _is_deposit:
         diff = D1 - D0
@@ -390,7 +380,7 @@ def add_liquidity(_amounts: uint256[N_COINS], _min_mint_amount: uint256, _use_un
     D0: uint256 = self._get_D_precisions(old_balances, amp)
     
     lp_token: address = self.lp_token
-    token_supply: uint256 = CurveToken(lp_token).totalSupply()
+    token_supply: uint256 = KaglaToken(lp_token).totalSupply()
     new_balances: uint256[N_COINS] = old_balances
     for i in range(N_COINS):
         if token_supply == 0:
@@ -484,7 +474,7 @@ def add_liquidity(_amounts: uint256[N_COINS], _min_mint_amount: uint256, _use_un
                 if len(_response) > 0:
                     assert convert(_response, bool)
     # Mint pool tokens
-    CurveToken(lp_token).mint(msg.sender, mint_amount)
+    KaglaToken(lp_token).mint(msg.sender, mint_amount)
 
     log AddLiquidity(msg.sender, _amounts, fees, D1, token_supply + mint_amount)
 
@@ -714,7 +704,7 @@ def remove_liquidity(
     """
     amounts: uint256[N_COINS] = self._balances()
     lp_token: address = self.lp_token
-    total_supply: uint256 = CurveToken(lp_token).totalSupply()
+    total_supply: uint256 = KaglaToken(lp_token).totalSupply()
 
     lending_pool: address = ZERO_ADDRESS
     if _use_underlying:
@@ -739,7 +729,7 @@ def remove_liquidity(
             if len(_response) > 0:
                 assert convert(_response, bool)
     
-    CurveToken(lp_token).burnFrom(msg.sender, _amount)  # dev: insufficient funds
+    KaglaToken(lp_token).burnFrom(msg.sender, _amount)  # dev: insufficient funds
     log RemoveLiquidity(msg.sender, amounts, empty(uint256[N_COINS]), total_supply - _amount)
 
     return amounts
@@ -789,12 +779,12 @@ def remove_liquidity_imbalance(
     D2: uint256 = self._get_D_precisions(new_balances, amp)
 
     lp_token: address = self.lp_token
-    token_supply: uint256 = CurveToken(lp_token).totalSupply()
+    token_supply: uint256 = KaglaToken(lp_token).totalSupply()
     token_amount: uint256 = (D0 - D2) * token_supply / D0
     assert token_amount != 0  # dev: zero tokens burned
     assert token_amount <= _max_burn_amount, "Slippage screwed you"
 
-    CurveToken(lp_token).burnFrom(msg.sender, token_amount)  # dev: insufficient funds
+    KaglaToken(lp_token).burnFrom(msg.sender, token_amount)  # dev: insufficient funds
 
     lending_pool: address = ZERO_ADDRESS
     if _use_underlying:
@@ -942,7 +932,7 @@ def remove_liquidity_one_coin(
     dy: uint256 = self._calc_withdraw_one_coin(_token_amount, i)
     assert dy >= _min_amount, "Not enough coins removed"
 
-    CurveToken(self.lp_token).burnFrom(msg.sender, _token_amount)  # dev: insufficient funds
+    KaglaToken(self.lp_token).burnFrom(msg.sender, _token_amount)  # dev: insufficient funds
 
     if _use_underlying:
         LendingPool(self.aave_lending_pool).withdraw(self.underlying_coins[i], dy, msg.sender)

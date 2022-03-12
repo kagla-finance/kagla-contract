@@ -1,16 +1,9 @@
 # @version ^0.2.8
-"""
-@title StableSwap
-@author Curve.Fi
-@license Copyright (c) Curve.Fi, 2020 - all rights reserved
-@notice Minimal pool implementation with no lending
-@dev This contract is only a template, pool-specific constants
-     must be set prior to compiling
-"""
+
 
 from vyper.interfaces import ERC20
 
-interface CurveToken:
+interface KaglaToken:
     def totalSupply() -> uint256: view
     def mint(_to: address, _value: uint256) -> bool: nonpayable
     def burnFrom(_to: address, _value: uint256) -> bool: nonpayable
@@ -282,7 +275,7 @@ def calc_token_amount(_amounts: uint256[N_COINS], _is_deposit: bool) -> uint256:
         else:
             balances[i] -= _amounts[i]
     D1: uint256 = self._get_D_mem(balances, amp)
-    token_amount: uint256 = CurveToken(self.lp_token).totalSupply()
+    token_amount: uint256 = KaglaToken(self.lp_token).totalSupply()
     diff: uint256 = 0
     if _is_deposit:
         diff = D1 - D0
@@ -309,7 +302,7 @@ def add_liquidity(_amounts: uint256[N_COINS], _min_mint_amount: uint256) -> uint
     D0: uint256 = self._get_D_mem(old_balances, amp)
 
     lp_token: address = self.lp_token
-    token_supply: uint256 = CurveToken(lp_token).totalSupply()
+    token_supply: uint256 = KaglaToken(lp_token).totalSupply()
     new_balances: uint256[N_COINS] = old_balances
     for i in range(N_COINS):
         if token_supply == 0:
@@ -367,7 +360,7 @@ def add_liquidity(_amounts: uint256[N_COINS], _min_mint_amount: uint256) -> uint
             # end "safeTransferFrom"
 
     # Mint pool tokens
-    CurveToken(lp_token).mint(msg.sender, mint_amount)
+    KaglaToken(lp_token).mint(msg.sender, mint_amount)
 
     log AddLiquidity(msg.sender, _amounts, fees, D1, token_supply + mint_amount)
 
@@ -519,7 +512,7 @@ def remove_liquidity(_amount: uint256, _min_amounts: uint256[N_COINS]) -> uint25
     @return List of amounts of coins that were withdrawn
     """
     lp_token: address = self.lp_token
-    total_supply: uint256 = CurveToken(lp_token).totalSupply()
+    total_supply: uint256 = KaglaToken(lp_token).totalSupply()
     amounts: uint256[N_COINS] = empty(uint256[N_COINS])
 
     for i in range(N_COINS):
@@ -540,7 +533,7 @@ def remove_liquidity(_amount: uint256, _min_amounts: uint256[N_COINS]) -> uint25
         if len(_response) > 0:
             assert convert(_response, bool)
 
-    CurveToken(lp_token).burnFrom(msg.sender, _amount)  # dev: insufficient funds
+    KaglaToken(lp_token).burnFrom(msg.sender, _amount)  # dev: insufficient funds
 
     log RemoveLiquidity(msg.sender, amounts, empty(uint256[N_COINS]), total_supply - _amount)
 
@@ -583,13 +576,13 @@ def remove_liquidity_imbalance(_amounts: uint256[N_COINS], _max_burn_amount: uin
     D2: uint256 = self._get_D_mem(new_balances, amp)
 
     lp_token: address = self.lp_token
-    token_supply: uint256 = CurveToken(lp_token).totalSupply()
+    token_supply: uint256 = KaglaToken(lp_token).totalSupply()
     token_amount: uint256 = (D0 - D2) * token_supply / D0
     assert token_amount != 0  # dev: zero tokens burned
     token_amount += 1  # In case of rounding errors - make it unfavorable for the "attacker"
     assert token_amount <= _max_burn_amount, "Slippage screwed you"
 
-    CurveToken(lp_token).burnFrom(msg.sender, token_amount)  # dev: insufficient funds
+    KaglaToken(lp_token).burnFrom(msg.sender, token_amount)  # dev: insufficient funds
     for i in range(N_COINS):
         if _amounts[i] != 0:
             _response: Bytes[32] = raw_call(
@@ -666,7 +659,7 @@ def _calc_withdraw_one_coin(_token_amount: uint256, i: int128) -> (uint256, uint
     xp: uint256[N_COINS] = self._xp()
     D0: uint256 = self._get_D(xp, amp)
 
-    total_supply: uint256 = CurveToken(self.lp_token).totalSupply()
+    total_supply: uint256 = KaglaToken(self.lp_token).totalSupply()
     D1: uint256 = D0 - _token_amount * D0 / total_supply
     new_y: uint256 = self._get_y_D(amp, i, xp, D1)
     xp_reduced: uint256[N_COINS] = xp
@@ -718,7 +711,7 @@ def remove_liquidity_one_coin(_token_amount: uint256, i: int128, _min_amount: ui
     assert dy >= _min_amount, "Not enough coins removed"
 
     self.balances[i] -= (dy + dy_fee * self.admin_fee / FEE_DENOMINATOR)
-    CurveToken(self.lp_token).burnFrom(msg.sender, _token_amount)  # dev: insufficient funds
+    KaglaToken(self.lp_token).burnFrom(msg.sender, _token_amount)  # dev: insufficient funds
 
     _response: Bytes[32] = raw_call(
         self.coins[i],

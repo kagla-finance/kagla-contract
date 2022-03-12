@@ -1,7 +1,7 @@
 # @version 0.1.0b16
 
-# @title Curve LP Token
-# @author Curve.Fi
+# @title KaglaBase LP Token
+# @author KaglaBase.Fi
 # @notice Used in combination with all pools compiled by vyper 0.1.0-beta.x
 # @dev Follows the ERC-20 token standard as defined at
 #      https://eips.ethereum.org/EIPS/eip-20
