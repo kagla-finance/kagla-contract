@@ -11,7 +11,7 @@ reports:
     - contracts/gauges/*.*
 
 dependencies:
-  - curvefi/curve-dao-contracts@1.2.0
+  - kagla-finance/kagla-dao-contracts@v0.0.1
 
 hypothesis:
   phases:
