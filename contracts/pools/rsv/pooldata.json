@@ -5,10 +5,10 @@
     "lp_token_address": "0xC2Ee6b0334C261ED60C72f6054450b61B8f18E35",
     "zap_address": "0xBE175115BF33E12348ff77CcfEE4726866A0Fbd5",
     "gauge_addresses": ["0x4dC4A289a8E33600D8bD4cf5F6313E43a37adec7"],
-    "lp_contract": "CurveTokenV2",
+    "lp_contract": "KaglaTokenV2",
     "lp_constructor": {
         "symbol": "rsv3CRV",
-        "name": "Curve.fi RSV/3Crv"
+        "name": "Kagla.finance RSV/3Crv"
     },
     "swap_constructor": {
         "_A": 200,

@@ -1,22 +1,22 @@
-# curve-contract/contracts/pools/pax
+# kagla-contract/contracts/pools/pax
 
-[Curve PAX pool](https://www.curve.fi/pax), with lending on [yearn.finance](https://yearn.finance/).
+[Kagla PAX pool](https://www.kagla.finance/pax), with lending on [yearn.finance](https://yearn.finance/).
 
 ## Contracts
 
 * [`DepositPAX`](DepositPAX.vy): Depositor contract, used to wrap underlying tokens prior to depositing them into the pool
-* [`StableSwapPAX`](StableSwapPAX.vy): Curve stablecoin AMM contract
+* [`StableSwapPAX`](StableSwapPAX.vy): Kagla stablecoin AMM contract
 
 ## Deployments
 
-* [`CurveContractV1`](../../tokens/CurveTokenV1.vy): [0xD905e2eaeBe188fc92179b6350807D8bd91Db0D8](https://etherscan.io/address/0xD905e2eaeBe188fc92179b6350807D8bd91Db0D8)
+* [`KaglaContractV1`](../../tokens/KaglaTokenV1.vy): [0xD905e2eaeBe188fc92179b6350807D8bd91Db0D8](https://etherscan.io/address/0xD905e2eaeBe188fc92179b6350807D8bd91Db0D8)
 * [`DepositPAX`](DepositPAX.vy): [0xa50ccc70b6a011cffddf45057e39679379187287](https://etherscan.io/address/0xa50ccc70b6a011cffddf45057e39679379187287)
 * [`LiquidityGauge`](../../gauges/LiquidityGauge.vy): [0x64E3C23bfc40722d3B649844055F1D51c1ac041d](https://etherscan.io/address/0x64E3C23bfc40722d3B649844055F1D51c1ac041d)
 * [`StableSwapPAX`](StableSwapPAX.vy): [0x06364f10B501e868329afBc005b3492902d6C763](https://etherscan.io/address/0x06364f10B501e868329afBc005b3492902d6C763)
 
 ## Stablecoins
 
-Curve PAX pool supports swaps between the following stablecoins:
+Kagla PAX pool supports swaps between the following stablecoins:
 
 ### Wrapped
 

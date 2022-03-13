@@ -1,7 +1,7 @@
 import pytest
 from brownie.test import given, strategy
 from hypothesis import settings
-from simulation import Curve
+from simulation import Kagla
 
 # do not run this test on pools without lending, meta pools or aToken-style pools
 pytestmark = [pytest.mark.lending, pytest.mark.skip_pool_type("meta", "arate")]
@@ -78,7 +78,7 @@ def test_simulated_exchange(
 
         precision = 10 ** (18 - decimals)
         rates.append(rate * precision)
-    curve_model = Curve(2 * 360, balances, n_coins, rates)
+    kagla_model = Kagla(2 * 360, balances, n_coins, rates)
 
     # Start trading!
     rate_mul = [10 ** i for i in underlying_decimals]
@@ -88,7 +88,7 @@ def test_simulated_exchange(
             if hasattr(coin, "get_rate"):
                 rate = int(coin.get_rate() * 1.0001)
                 coin.set_exchange_rate(rate, {"from": alice})
-                curve_model.p[i] = rate * (10 ** (18 - decimals))
+                kagla_model.p[i] = rate * (10 ** (18 - decimals))
 
         chain.sleep(3600)
 
@@ -114,7 +114,7 @@ def test_simulated_exchange(
         x_1 = underlying_coins[send].balanceOf(bob)
         y_1 = underlying_coins[recv].balanceOf(bob)
 
-        dy_m = curve_model.exchange(send, recv, value * max(rate_mul) // rate_mul[send])
+        dy_m = kagla_model.exchange(send, recv, value * max(rate_mul) // rate_mul[send])
         dy_m = dy_m * rate_mul[recv] // max(rate_mul)
 
         assert x_0 - x_1 == value
@@ -127,5 +127,5 @@ def test_simulated_exchange(
     final_balances = [swap.balances(i) for i in range(n_coins)]
     final_total = sum(final_balances[i] * rates[i] / 1e18 for i in range(n_coins))
 
-    assert [round(a / b, 6) for a, b in zip(final_balances, curve_model.x)] == [1.0] * n_coins
+    assert [round(a / b, 6) for a, b in zip(final_balances, kagla_model.x)] == [1.0] * n_coins
     assert final_total > n_coins * 100 * max(rate_mul)

@@ -1,20 +1,20 @@
 # @version 0.2.5
 """
-@title Curve RSV Metapool
-@author Curve.Fi
-@license Copyright (c) Curve.Fi, 2020 - all rights reserved
+@title Kagla RSV Metapool
+
+
 @dev Utilizes 3Pool to allow swaps between RSV / DAI / USDC / USDT
 """
 
 from vyper.interfaces import ERC20
 
-interface CurveToken:
+interface KaglaToken:
     def totalSupply() -> uint256: view
     def mint(_to: address, _value: uint256) -> bool: nonpayable
     def burnFrom(_to: address, _value: uint256) -> bool: nonpayable
 
 
-interface Curve:
+interface Kagla:
     def coins(i: uint256) -> address: view
     def get_virtual_price() -> uint256: view
     def calc_token_amount(amounts: uint256[BASE_N_COINS], deposit: bool) -> uint256: view
@@ -125,7 +125,7 @@ fee: public(uint256)  # fee * 1e10
 admin_fee: public(uint256)  # admin_fee * 1e10
 
 owner: public(address)
-token: CurveToken
+token: KaglaToken
 
 # Token corresponding to the pool is always the last one
 BASE_POOL_COINS: constant(int128) = 3
@@ -181,13 +181,13 @@ def __init__(
     self.admin_fee = _admin_fee
     self.owner = _owner
     self.kill_deadline = block.timestamp + KILL_DEADLINE_DT
-    self.token = CurveToken(_pool_token)
+    self.token = KaglaToken(_pool_token)
 
     self.base_pool = _base_pool
-    self.base_virtual_price = Curve(_base_pool).get_virtual_price()
+    self.base_virtual_price = Kagla(_base_pool).get_virtual_price()
     self.base_cache_updated = block.timestamp
     for i in range(BASE_POOL_COINS):
-        _base_coin: address = Curve(_base_pool).coins(convert(i, uint256))
+        _base_coin: address = Kagla(_base_pool).coins(convert(i, uint256))
         self.base_coins[i] = _base_coin
 
         # approve underlying coins for infinite transfers
@@ -261,7 +261,7 @@ def _xp_mem(vp_rate: uint256, _balances: uint256[N_COINS]) -> uint256[N_COINS]:
 @internal
 def _vp_rate() -> uint256:
     if block.timestamp > self.base_cache_updated + BASE_CACHE_EXPIRES:
-        vprice: uint256 = Curve(self.base_pool).get_virtual_price()
+        vprice: uint256 = Kagla(self.base_pool).get_virtual_price()
         self.base_virtual_price = vprice
         self.base_cache_updated = block.timestamp
         return vprice
@@ -273,7 +273,7 @@ def _vp_rate() -> uint256:
 @view
 def _vp_rate_ro() -> uint256:
     if block.timestamp > self.base_cache_updated + BASE_CACHE_EXPIRES:
-        return Curve(self.base_pool).get_virtual_price()
+        return Kagla(self.base_pool).get_virtual_price()
     else:
         return self.base_virtual_price
 
@@ -528,14 +528,14 @@ def get_dy_underlying(i: int128, j: int128, dx: uint256) -> uint256:
             base_inputs: uint256[BASE_N_COINS] = empty(uint256[BASE_N_COINS])
             base_inputs[base_i] = dx
             # Token amount transformed to underlying "dollars"
-            x = Curve(_base_pool).calc_token_amount(base_inputs, True) * vp_rate / PRECISION
+            x = Kagla(_base_pool).calc_token_amount(base_inputs, True) * vp_rate / PRECISION
             # Accounting for deposit/withdraw fees approximately
-            x -= x * Curve(_base_pool).fee() / (2 * FEE_DENOMINATOR)
+            x -= x * Kagla(_base_pool).fee() / (2 * FEE_DENOMINATOR)
             # Adding number of pool tokens
             x += xp[MAX_COIN]
         else:
             # If both are from the base pool
-            return Curve(_base_pool).get_dy(base_i, base_j, dx)
+            return Kagla(_base_pool).get_dy(base_i, base_j, dx)
 
     # This pool is involved only when in-pool assets are used
     y: uint256 = self.get_y(meta_i, meta_j, x, xp)
@@ -548,7 +548,7 @@ def get_dy_underlying(i: int128, j: int128, dx: uint256) -> uint256:
     else:
         # j is from BasePool
         # The fee is already accounted for
-        dy = Curve(_base_pool).calc_withdraw_one_coin(dy * PRECISION / vp_rate, base_j)
+        dy = Kagla(_base_pool).calc_withdraw_one_coin(dy * PRECISION / vp_rate, base_j)
 
     return dy
 
@@ -675,7 +675,7 @@ def exchange_underlying(i: int128, j: int128, dx: uint256, min_dy: uint256) -> u
             coin_i: address = self.coins[MAX_COIN]
             # Deposit and measure delta
             x = ERC20(coin_i).balanceOf(self)
-            Curve(_base_pool).add_liquidity(base_inputs, 0)
+            Kagla(_base_pool).add_liquidity(base_inputs, 0)
             # Need to convert pool token to "virtual" units using rates
             # dx is also different now
             dx_w_fee = ERC20(coin_i).balanceOf(self) - x
@@ -704,7 +704,7 @@ def exchange_underlying(i: int128, j: int128, dx: uint256, min_dy: uint256) -> u
         # Withdraw from the base pool if needed
         if base_j >= 0:
             out_amount: uint256 = ERC20(output_coin).balanceOf(self)
-            Curve(_base_pool).remove_liquidity_one_coin(dy, base_j, 0)
+            Kagla(_base_pool).remove_liquidity_one_coin(dy, base_j, 0)
             dy = ERC20(output_coin).balanceOf(self) - out_amount
 
         assert dy >= min_dy, "Too few coins in result"
@@ -712,7 +712,7 @@ def exchange_underlying(i: int128, j: int128, dx: uint256, min_dy: uint256) -> u
     else:
         # If both are from the base pool
         dy = ERC20(output_coin).balanceOf(self)
-        Curve(_base_pool).exchange(base_i, base_j, dx_w_fee, min_dy)
+        Kagla(_base_pool).exchange(base_i, base_j, dx_w_fee, min_dy)
         dy = ERC20(output_coin).balanceOf(self) - dy
 
     # "safeTransfer" which works for ERC20s which return bool or not

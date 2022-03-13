@@ -1,5 +1,5 @@
 {
-    "lp_contract": "CurveTokenV3",
+    "lp_contract": "KaglaTokenV3",
     "pool_types": ["arate"],
     "wrapped_contract": "ATokenMock",
     "swap_address": "0xDeBF20617708857ebe4F679508E7b7863a8A8EeE",
@@ -7,7 +7,7 @@
     "gauge_addresses": ["0xd662908ADA2Ea1916B3318327A97eB18aD588b5d"],
     "lp_constructor": {
         "symbol": "a3CRV",
-        "name": "Curve.fi aDAI/aUSDC/aUSDT"
+        "name": "Kagla.finance aDAI/aUSDC/aUSDT"
     },
     "swap_constructor": {
         "_A": 200,

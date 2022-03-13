@@ -1,8 +1,6 @@
 # @version 0.2.8
 """
 @title Liquidity Gauge v2
-@author Curve Finance
-@license MIT
 """
 
 from vyper.interfaces import ERC20

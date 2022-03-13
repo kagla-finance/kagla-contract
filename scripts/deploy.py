@@ -75,7 +75,7 @@ def main():
     token.set_minter(swap, _tx_params())
 
     # deploy the liquidity gauge
-    LiquidityGaugeV3 = load_project("curvefi/curve-dao-contracts@1.2.0").LiquidityGaugeV3
+    LiquidityGaugeV3 = load_project("kagla-finance/kagla-dao-contracts@1.2.0").LiquidityGaugeV3
     LiquidityGaugeV3.deploy(token, MINTER, GAUGE_OWNER, _tx_params())
 
     # deploy the zap
@@ -89,7 +89,7 @@ def main():
             "_underlying_coins": underlying_coins,
             "_token": token,
             "_pool": swap,
-            "_curve": swap,
+            "_kagla": swap,
         }
         deployment_args = [args[i["name"]] for i in abi] + [_tx_params()]
 

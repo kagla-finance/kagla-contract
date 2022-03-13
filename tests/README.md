@@ -1,6 +1,6 @@
-# curve-contract/tests
+# kagla-contract/tests
 
-Test cases for Curve pools.
+Test cases for Kagla pools.
 
 ## Subdirectories
 
@@ -13,7 +13,7 @@ Test cases for Curve pools.
 ## Files
 
 - [`conftest.py`](conftest.py): Base configuration file for the test suite.
-- [`simulation.py`](simulation.py): A python model of the math used within Curve's contracts. Used for testing expected outcomes with actual results.
+- [`simulation.py`](simulation.py): A python model of the math used within Kagla's contracts. Used for testing expected outcomes with actual results.
 
 ## Organization
 

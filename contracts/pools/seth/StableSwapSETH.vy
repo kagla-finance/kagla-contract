@@ -1,13 +1,13 @@
 # @version 0.2.8
 """
-@title Curve ETH/sETH StableSwap
-@author Curve.Fi
-@license Copyright (c) Curve.Fi, 2020 - all rights reserved
+@title Kagla ETH/sETH StableSwap
+
+
 """
 
 from vyper.interfaces import ERC20
 
-interface CurveToken:
+interface KaglaToken:
     def mint(_to: address, _value: uint256) -> bool: nonpayable
     def burnFrom(_to: address, _value: uint256) -> bool: nonpayable
 
@@ -326,7 +326,7 @@ def add_liquidity(amounts: uint256[N_COINS], min_mint_amount: uint256) -> uint25
                 assert convert(_response, bool)
 
     # Mint pool tokens
-    CurveToken(lp_token).mint(msg.sender, mint_amount)
+    KaglaToken(lp_token).mint(msg.sender, mint_amount)
 
     log AddLiquidity(msg.sender, amounts, fees, D1, token_supply + mint_amount)
 
@@ -479,7 +479,7 @@ def remove_liquidity(_amount: uint256, min_amounts: uint256[N_COINS]) -> uint256
     total_supply: uint256 = ERC20(lp_token).totalSupply()
     amounts: uint256[N_COINS] = empty(uint256[N_COINS])
 
-    CurveToken(lp_token).burnFrom(msg.sender, _amount)  # dev: insufficient funds
+    KaglaToken(lp_token).burnFrom(msg.sender, _amount)  # dev: insufficient funds
 
     for i in range(N_COINS):
         old_balance: uint256 = self.balances[i]
@@ -554,7 +554,7 @@ def remove_liquidity_imbalance(amounts: uint256[N_COINS], max_burn_amount: uint2
     token_amount += 1  # In case of rounding errors - make it unfavorable for the "attacker"
     assert token_amount <= max_burn_amount, "Slippage screwed you"
 
-    CurveToken(lp_token).burnFrom(msg.sender, token_amount)  # dev: insufficient funds
+    KaglaToken(lp_token).burnFrom(msg.sender, token_amount)  # dev: insufficient funds
 
     for i in range(N_COINS):
         amount: uint256 = amounts[i]
@@ -688,7 +688,7 @@ def remove_liquidity_one_coin(_token_amount: uint256, i: int128, _min_amount: ui
     assert dy >= _min_amount, "Not enough coins removed"
 
     self.balances[i] -= (dy + dy_fee * self.admin_fee / FEE_DENOMINATOR)
-    CurveToken(self.lp_token).burnFrom(msg.sender, _token_amount)  # dev: insufficient funds
+    KaglaToken(self.lp_token).burnFrom(msg.sender, _token_amount)  # dev: insufficient funds
 
     _coin: address = self.coins[i]
     if _coin == 0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE:

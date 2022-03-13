@@ -1,26 +1,26 @@
-# curve-contract/contracts/pools/pbtc
+# kagla-contract/contracts/pools/pbtc
 
-[Curve pBTC metapool](https://www.curve.fi/pbtc), allowing swaps via the Curve [sBTC pool](../sbtc).
+[Kagla pBTC metapool](https://www.kagla.finance/pbtc), allowing swaps via the Kagla [sBTC pool](../sbtc).
 
 ## Contracts
 
 * [`DepositPBTC`](DepositPBTC.vy): Depositor contract, used to wrap underlying tokens prior to depositing them into the pool
-* [`StableSwapPBTC`](StableSwapPBTC.vy): Curve stablecoin AMM contract
+* [`StableSwapPBTC`](StableSwapPBTC.vy): Kagla stablecoin AMM contract
 
 ## Deployments
 
-[`CurveContractV2`](../../tokens/CurveTokenV2.vy): [0xDE5331AC4B3630f94853Ff322B66407e0D6331E8](https://etherscan.io/address/0xDE5331AC4B3630f94853Ff322B66407e0D6331E8)
+[`KaglaContractV2`](../../tokens/KaglaTokenV2.vy): [0xDE5331AC4B3630f94853Ff322B66407e0D6331E8](https://etherscan.io/address/0xDE5331AC4B3630f94853Ff322B66407e0D6331E8)
 * [`DepositPBTC`](DepositPBTC.vy): [0x11F419AdAbbFF8d595E7d5b223eee3863Bb3902C](https://etherscan.io/address/0x11F419AdAbbFF8d595E7d5b223eee3863Bb3902C)
-* [`LiquidityGaugeV2`](https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/gauges/LiquidityGaugeV2.vy): [0xd7d147c6Bb90A718c3De8C0568F9B560C79fa416](https://etherscan.io/address/0xd7d147c6Bb90A718c3De8C0568F9B560C79fa416)
+* [`LiquidityGaugeV2`](https://github.com/kagla-finance/kagla-dao-contracts/blob/master/contracts/gauges/LiquidityGaugeV2.vy): [0xd7d147c6Bb90A718c3De8C0568F9B560C79fa416](https://etherscan.io/address/0xd7d147c6Bb90A718c3De8C0568F9B560C79fa416)
 * [`StableSwapPBTC`](StableSwapPBTC.vy): [0x7F55DDe206dbAD629C080068923b36fe9D6bDBeF](https://etherscan.io/address/0x7F55DDe206dbAD629C080068923b36fe9D6bDBeF)
 
 ## Stablecoins
 
-Curve pBTC metapool utilizes the supports swaps between the following assets:
+Kagla pBTC metapool utilizes the supports swaps between the following assets:
 
 ## Direct swaps
 
-Direct swaps are possible between pBTC and the Curve sBTC LP token.
+Direct swaps are possible between pBTC and the Kagla sBTC LP token.
 
 * `pBTC`: [0x5228a22e72ccC52d415EcFd199F99D0665E7733b](https://etherscan.io/address/0x5228a22e72ccC52d415EcFd199F99D0665E7733b)
 * `sbtcCRV`: [0x075b1bb99792c9E1041bA13afEf80C91a1e70fB3](https://etherscan.io/address/0x075b1bb99792c9E1041bA13afEf80C91a1e70fB3)

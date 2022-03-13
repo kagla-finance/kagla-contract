@@ -1,8 +1,8 @@
 # @version 0.2.8
 """
-@title Curve saPool
-@author Curve.Fi
-@license Copyright (c) Curve.Fi, 2020 - all rights reserved
+@title Kagla saPool
+
+
 @notice Pool implementation with aToken-style lending
 """
 
@@ -12,7 +12,7 @@ from vyper.interfaces import ERC20
 interface LendingPool:
     def withdraw(_underlying_asset: address, _amount: uint256, _receiver: address): nonpayable
 
-interface CurveToken:
+interface KaglaToken:
     def mint(_to: address, _value: uint256) -> bool: nonpayable
     def burnFrom(_to: address, _value: uint256) -> bool: nonpayable
 
@@ -434,7 +434,7 @@ def add_liquidity(_amounts: uint256[N_COINS], _min_mint_amount: uint256, _use_un
                 assert ERC20(self.coins[i]).transferFrom(msg.sender, self, amount) # dev: failed transfer
 
     # Mint pool tokens
-    CurveToken(lp_token).mint(msg.sender, mint_amount)
+    KaglaToken(lp_token).mint(msg.sender, mint_amount)
 
     log AddLiquidity(msg.sender, _amounts, fees, D1, token_supply + mint_amount)
 
@@ -626,7 +626,7 @@ def remove_liquidity(
     amounts: uint256[N_COINS] = self._balances()
     lp_token: address = self.lp_token
     total_supply: uint256 = ERC20(lp_token).totalSupply()
-    CurveToken(lp_token).burnFrom(msg.sender, _amount)  # dev: insufficient funds
+    KaglaToken(lp_token).burnFrom(msg.sender, _amount)  # dev: insufficient funds
 
     lending_pool: address = ZERO_ADDRESS
     if _use_underlying:
@@ -698,7 +698,7 @@ def remove_liquidity_imbalance(
     assert token_amount != 0  # dev: zero tokens burned
     assert token_amount <= _max_burn_amount, "Slippage screwed you"
 
-    CurveToken(lp_token).burnFrom(msg.sender, token_amount)  # dev: insufficient funds
+    KaglaToken(lp_token).burnFrom(msg.sender, token_amount)  # dev: insufficient funds
 
     lending_pool: address = ZERO_ADDRESS
     if _use_underlying:
@@ -832,7 +832,7 @@ def remove_liquidity_one_coin(
     dy: uint256 = self._calc_withdraw_one_coin(_token_amount, i)
     assert dy >= _min_amount, "Not enough coins removed"
 
-    CurveToken(self.lp_token).burnFrom(msg.sender, _token_amount)  # dev: insufficient funds
+    KaglaToken(self.lp_token).burnFrom(msg.sender, _token_amount)  # dev: insufficient funds
 
     if _use_underlying:
         LendingPool(self.aave_lending_pool).withdraw(self.underlying_coins[i], dy, msg.sender)

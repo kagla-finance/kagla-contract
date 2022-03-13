@@ -1,20 +1,20 @@
-# curve-contract/contracts/pools/ib
+# kagla-contract/contracts/pools/ib
 
-[Curve Iron Bank pool](https://www.curve.fi/ib), with lending on [Cream](https://v1.yearn.finance/lending).
+[Kagla Iron Bank pool](https://www.kagla.finance/ib), with lending on [Cream](https://v1.yearn.finance/lending).
 
 ## Contracts
 
-* [`StableSwapIB`](StableSwapIB.vy): Curve stablecoin AMM contract
+* [`StableSwapIB`](StableSwapIB.vy): Kagla stablecoin AMM contract
 
 ## Deployments
 
-* [`CurveContractV3`](../../tokens/CurveTokenV3.vy): [0x5282a4eF67D9C33135340fB3289cc1711c13638C](https://etherscan.io/address/0x5282a4eF67D9C33135340fB3289cc1711c13638C)
-* [`LiquidityGaugeV2`](https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/gauges/LiquidityGaugeV2.vy): [0xF5194c3325202F456c95c1Cf0cA36f8475C1949F](https://etherscan.io/address/0xF5194c3325202F456c95c1Cf0cA36f8475C1949F)
+* [`KaglaContractV3`](../../tokens/KaglaTokenV3.vy): [0x5282a4eF67D9C33135340fB3289cc1711c13638C](https://etherscan.io/address/0x5282a4eF67D9C33135340fB3289cc1711c13638C)
+* [`LiquidityGaugeV2`](https://github.com/kagla-finance/kagla-dao-contracts/blob/master/contracts/gauges/LiquidityGaugeV2.vy): [0xF5194c3325202F456c95c1Cf0cA36f8475C1949F](https://etherscan.io/address/0xF5194c3325202F456c95c1Cf0cA36f8475C1949F)
 * [`StableSwapIB`](StableSwapIB.vy): [0x2dded6Da1BF5DBdF597C45fcFaa3194e53EcfeAF](https://etherscan.io/address/0x2dded6Da1BF5DBdF597C45fcFaa3194e53EcfeAF)
 
 ## Stablecoins
 
-Curve Iron Bank pool supports swaps between the following stablecoins:
+Kagla Iron Bank pool supports swaps between the following stablecoins:
 
 ### Wrapped
 

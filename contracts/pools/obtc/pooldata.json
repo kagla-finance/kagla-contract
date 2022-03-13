@@ -5,10 +5,10 @@
     "lp_token_address": "0x2fE94ea3d5d4a175184081439753DE15AeF9d614",
     "zap_address": "0xd5BCf53e2C81e1991570f33Fa881c49EEa570C8D",
     "gauge_addresses": ["0x11137B10C210b579405c21A07489e28F3c040AB1"],
-    "lp_contract": "CurveTokenV3",
+    "lp_contract": "KaglaTokenV3",
     "lp_constructor": {
         "symbol": "oBTC/sbtcCRV",
-        "name": "Curve.fi oBTC/sbtcCRV"
+        "name": "Kagla.finance oBTC/sbtcCRV"
     },
     "swap_constructor": {
         "_A": 200,

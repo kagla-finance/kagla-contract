@@ -1,5 +1,5 @@
 {
-    "lp_contract": "CurveTokenV3",
+    "lp_contract": "KaglaTokenV3",
     "pool_types": ["crate"],
     "wrapped_contract": "cERC20",
     "swap_address": "0x2dded6Da1BF5DBdF597C45fcFaa3194e53EcfeAF",
@@ -7,7 +7,7 @@
     "gauge_addresses": ["0xF5194c3325202F456c95c1Cf0cA36f8475C1949F"],
     "lp_constructor": {
         "symbol": "ib3CRV",
-        "name": "Curve.fi cyDAI/cyUSDC/cyUSDT"
+        "name": "Kagla.finance cyDAI/cyUSDC/cyUSDT"
     },
     "swap_constructor": {
         "_A": 600,

@@ -1,10 +1,10 @@
 # @version 0.2.4
-# (c) Curve.Fi, 2020
+
 # Pool for hBTC/wBTC
 
 from vyper.interfaces import ERC20
 
-interface CurveToken:
+interface KaglaToken:
     def set_minter(_minter: address): nonpayable
     def set_name(_name: String[64], _symbol: String[32]): nonpayable
     def totalSupply() -> uint256: view
@@ -105,7 +105,7 @@ fee: public(uint256)  # fee * 1e10
 admin_fee: public(uint256)  # admin_fee * 1e10
 
 owner: public(address)
-token: CurveToken
+token: KaglaToken
 
 initial_A: public(uint256)
 future_A: public(uint256)
@@ -150,7 +150,7 @@ def __init__(
     self.admin_fee = _admin_fee
     self.owner = _owner
     self.kill_deadline = block.timestamp + KILL_DEADLINE_DT
-    self.token = CurveToken(_pool_token)
+    self.token = KaglaToken(_pool_token)
 
 
 @view

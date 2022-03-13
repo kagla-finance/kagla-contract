@@ -1,22 +1,22 @@
-# curve-contract/contracts/pools/busd
+# kagla-contract/contracts/pools/busd
 
-[Curve BUSD pool](https://www.curve.fi/busd), with lending on [yearn.finance](https://yearn.finance/).
+[Kagla BUSD pool](https://www.kagla.finance/busd), with lending on [yearn.finance](https://yearn.finance/).
 
 ## Contracts
 
 * [`DepositBUSD`](DepositBUSD.vy): Depositor contract, used to wrap underlying tokens prior to depositing them into the pool
-* [`StableSwapBUSD`](StableSwapBUSD.vy): Curve stablecoin AMM contract
+* [`StableSwapBUSD`](StableSwapBUSD.vy): Kagla stablecoin AMM contract
 
 ## Deployments
 
-* [`CurveContractV1`](../../tokens/CurveTokenV1.vy): [0x3B3Ac5386837Dc563660FB6a0937DFAa5924333B](https://etherscan.io/address/0x3B3Ac5386837Dc563660FB6a0937DFAa5924333B)
+* [`KaglaContractV1`](../../tokens/KaglaTokenV1.vy): [0x3B3Ac5386837Dc563660FB6a0937DFAa5924333B](https://etherscan.io/address/0x3B3Ac5386837Dc563660FB6a0937DFAa5924333B)
 * [`DepositBUSD`](DepositBUSD.vy): [0xb6c057591e073249f2d9d88ba59a46cfc9b59edb](https://etherscan.io/address/0xb6c057591e073249f2d9d88ba59a46cfc9b59edb)
 * [`LiquidityGauge`](../../gauges/LiquidityGauge.vy): [0x69Fb7c45726cfE2baDeE8317005d3F94bE838840](https://etherscan.io/address/0x69fb7c45726cfe2badee8317005d3f94be838840)
 * [`StableSwapBUSD`](StableSwapBUSD.vy): [0x79a8C46DeA5aDa233ABaFFD40F3A0A2B1e5A4F27](https://etherscan.io/address/0x79a8C46DeA5aDa233ABaFFD40F3A0A2B1e5A4F27)
 
 ## Stablecoins
 
-Curve BUSD pool supports swaps between the following stablecoins:
+Kagla BUSD pool supports swaps between the following stablecoins:
 
 ### Wrapped
 

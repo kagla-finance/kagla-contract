@@ -1,7 +1,7 @@
-class Curve:
+class Kagla:
 
     """
-    Python model of Curve pool math.
+    Python model of Kagla pool math.
     """
 
     def __init__(self, A, D, n, p=None, tokens=None):
