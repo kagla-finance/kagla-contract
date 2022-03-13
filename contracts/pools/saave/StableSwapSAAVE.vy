@@ -1,8 +1,6 @@
 # @version 0.2.8
 """
 @title Kagla saPool
-
-
 @notice Pool implementation with aToken-style lending
 """
 
