@@ -6,18 +6,18 @@ from brownie.project import load as load_project
 from brownie.project.main import get_loaded_projects
 
 # set a throwaway admin account here
-DEPLOYER = accounts.add()
+DEPLOYER = accounts.load("kagla-deploy")
 REQUIRED_CONFIRMATIONS = 1
 
 # deployment settings
 # most settings are taken from `contracts/pools/{POOL_NAME}/pooldata.json`
-POOL_NAME = ""
+POOL_NAME = "3pool"
 
 # temporary owner address
-POOL_OWNER = "0xedf2c58e16cc606da1977e79e1e69e79c54fe242"
-GAUGE_OWNER = "0xedf2c58e16cc606da1977e79e1e69e79c54fe242"
+POOL_OWNER = "0x50414Ac6431279824df9968855181474c919a94B"
+GAUGE_OWNER = "0x50414Ac6431279824df9968855181474c919a94B"
 
-MINTER = "0xd061D61a4d941c39E5453435B6345Dc261C2fcE0"
+MINTER = "0xE177574f0452B1695e246DA701341EBC17f760a1"
 
 # POOL_OWNER = "0xeCb456EA5365865EbAb8a2661B0c503410e9B347"  # PoolProxy
 # GAUGE_OWNER = "0x519AFB566c05E00cfB9af73496D00217A630e4D5"  # GaugeProxy
@@ -26,8 +26,7 @@ MINTER = "0xd061D61a4d941c39E5453435B6345Dc261C2fcE0"
 def _tx_params():
     return {
         "from": DEPLOYER,
-        "required_confs": REQUIRED_CONFIRMATIONS,
-        "gas_price": GasNowScalingStrategy("standard", "fast"),
+        "required_confs": REQUIRED_CONFIRMATIONS
     }
 
 
@@ -55,8 +54,8 @@ def main():
 
     # deploy the token
     token_args = pool_data["lp_constructor"]
+    ## TODO: all deployed tokens(including 3pool) are KaglaTokenV3.
     token = token_deployer.deploy(token_args["name"], token_args["symbol"], _tx_params())
-
     # deploy the pool
     abi = next(i["inputs"] for i in swap_deployer.abi if i["type"] == "constructor")
     args = pool_data["swap_constructor"]
@@ -75,7 +74,7 @@ def main():
     token.set_minter(swap, _tx_params())
 
     # deploy the liquidity gauge
-    LiquidityGaugeV3 = load_project("curvefi/curve-dao-contracts@1.2.0").LiquidityGaugeV3
+    LiquidityGaugeV3 = load_project("kagla-finance/kagla-dao-contracts@0.0.3").LiquidityGaugeV3
     LiquidityGaugeV3.deploy(token, MINTER, GAUGE_OWNER, _tx_params())
 
     # deploy the zap

@@ -9,7 +9,7 @@
         "python.linting.pylintPath": "/usr/local/bin/pylint"
     },
     "appPort": [
-        9000
+        9001
     ],
     "postCreateCommand": "pip install -r requirements.txt",
     "extensions": [
