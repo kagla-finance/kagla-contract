@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "lp_contract": "KaglaTokenV1",
   "wrapped_contract": "cERC20",
   "swap_address": "0x52EA46506B9CC5Ef470C5bf89f17Dc28bB35D85C",
@@ -19,17 +18,6 @@
       "wrapped_decimals": 8,
       "underlying_address": "0x6b175474e89094c44da98b954eedeac495271d0f",
       "wrapped_address": "0x5d3a536e4d6dbd6114cc1ead35777bab948e3643"
-=======
-    "lp_contract": "KaglaTokenV1",
-    "wrapped_contract": "cERC20",
-    "swap_address": "0x52EA46506B9CC5Ef470C5bf89f17Dc28bB35D85C",
-    "lp_token_address": "0x9fC689CCaDa600B6DF723D9E47D84d76664a1F23",
-    "zap_address": "0xac795d2c97e60df6a99ff1c814727302fd747a80",
-    "gauge_addresses": ["0xBC89cd85491d81C6AD2954E6d0362Ee29fCa8F53"],
-    "lp_constructor": {
-        "name": "Kagla.finance cDAI/cUSDC/USDT",
-        "symbol": "cDAI+cUSDC+USDT"
->>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
     },
     {
       "name": "cUSDC",

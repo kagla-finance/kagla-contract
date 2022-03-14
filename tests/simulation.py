@@ -1,14 +1,7 @@
-<<<<<<< HEAD
 class KaglaBase:
 
     """
     Python model of KaglaBase pool math.
-=======
-class Kagla:
-
-    """
-    Python model of Kagla pool math.
->>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
     """
 
     def __init__(self, A, D, n, p=None, tokens=None):

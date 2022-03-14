@@ -1,16 +1,6 @@
 # kagla-contract
 
-<<<<<<< HEAD
 Vyper contracts used in [Kagla](https://www.kagla.fi/) exchange pools.
-=======
-Vyper contracts used in [Kagla](https://www.kagla.finance/) exchange pools.
-
-## Overview
-
-Kagla is an exchange liquidity pool on Ethereum designed for extremely efficient stablecoin trading and low risk, supplemental fee income for liquidity providers, without an opportunity cost.
-
-Kagla allows users to trade between correlated cryptocurrencies with a bespoke low slippage, low fee algorithm. The liquidity pool is also supplied to lending protocol where it generates additional income for liquidity providers.
->>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
 
 ## Testing and Development
 

@@ -106,11 +106,7 @@ def zap(project, alice, swap, underlying_coins, wrapped_coins, pool_token, pool_
         "_underlying_coins": underlying_coins,
         "_token": pool_token,
         "_pool": swap,
-<<<<<<< HEAD
         "_KaglaBase": swap,
-=======
-        "_kagla": swap,
->>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
     }
     deployment_args = [args[i["name"]] for i in abi] + [({"from": alice})]
 

@@ -1,11 +1,4 @@
 # @version 0.2.8
-<<<<<<< HEAD
-=======
-"""
-@title Kagla aPool
-@notice Pool implementation with aToken-style lending
-"""
->>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
 
 from vyper.interfaces import ERC20
 

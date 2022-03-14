@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # KaglaBase-contract/contracts/pools/saave
 
 [KaglaBase SAAVE pool](https://www.KaglaBase.fi/saave), with lending on [Aave](https://aave.com/).
@@ -11,29 +10,11 @@
 
 * [`KaglaBaseContractV3`](../../tokens/KaglaTokenV3.vy): [0x02d341CcB60fAaf662bC0554d13778015d1b285C](https://etherscan.io/address/0x02d341CcB60fAaf662bC0554d13778015d1b285C)
 * [`LiquidityGaugeV2`](https://github.com/KaglaBasefi/KaglaBase-dao-contracts/blob/master/contracts/gauges/LiquidityGaugeV2.vy): [0x462253b8F74B72304c145DB0e4Eebd326B22ca39](https://etherscan.io/address/0x462253b8F74B72304c145DB0e4Eebd326B22ca39)
-=======
-# kagla-contract/contracts/pools/saave
-
-[Kagla SAAVE pool](https://www.kagla.finance/saave), with lending on [Aave](https://aave.com/).
-
-## Contracts
-
-* [`StableSwapSAAVE`](StableSwapSAAVE.vy): Kagla stablecoin AMM contract
-
-## Deployments
-
-* [`KaglaContractV3`](../../tokens/KaglaTokenV3.vy): [0x02d341CcB60fAaf662bC0554d13778015d1b285C](https://etherscan.io/address/0x02d341CcB60fAaf662bC0554d13778015d1b285C)
-* [`LiquidityGaugeV2`](https://github.com/kagla-finance/kagla-dao-contracts/blob/master/contracts/gauges/LiquidityGaugeV2.vy): [0x462253b8F74B72304c145DB0e4Eebd326B22ca39](https://etherscan.io/address/0x462253b8F74B72304c145DB0e4Eebd326B22ca39)
->>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
 * [`StableSwapSAAVE`](StableSwapSAAVE.vy): [0xeb16ae0052ed37f479f7fe63849198df1765a733](https://etherscan.io/address/0xeb16ae0052ed37f479f7fe63849198df1765a733)
 
 ## Stablecoins
 
-<<<<<<< HEAD
 KaglaBase SAAVE pool supports swaps between the following stablecoins:
-=======
-Kagla SAAVE pool supports swaps between the following stablecoins:
->>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
 
 ### Wrapped
 

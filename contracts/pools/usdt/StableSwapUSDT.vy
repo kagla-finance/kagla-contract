@@ -1,9 +1,5 @@
 # @version 0.1.0b16
-<<<<<<< HEAD
 # (c) KaglaBase.Fi, 2020
-=======
-
->>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
 
 
 # External Contracts

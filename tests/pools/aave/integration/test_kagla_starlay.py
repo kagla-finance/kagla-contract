@@ -4,11 +4,7 @@ from itertools import permutations
 import pytest
 from brownie.test import given, strategy
 from hypothesis import settings
-<<<<<<< HEAD:tests/pools/aave/integration/test_kagla_starlay.py
 from simulation import KaglaBase
-=======
-from simulation import Kagla
->>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca:tests/pools/aave/integration/test_kagla_aave.py
 
 pytestmark = pytest.mark.skip_pool_type("meta")
 
@@ -18,11 +14,7 @@ pytestmark = pytest.mark.skip_pool_type("meta")
     st_seed_amount=strategy("decimal", min_value=5, max_value=12, places=1),
 )
 @settings(max_examples=5)
-<<<<<<< HEAD:tests/pools/aave/integration/test_kagla_starlay.py
 def test_KaglaBase_in_contract(
-=======
-def test_kagla_in_contract(
->>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca:tests/pools/aave/integration/test_kagla_aave.py
     alice, swap, wrapped_coins, st_seed_amount, n_coins, approx, st_pct, wrapped_decimals
 ):
     st_seed_amount = int(10 ** st_seed_amount)
@@ -48,11 +40,7 @@ def test_kagla_in_contract(
         rate = 10 ** 18
         precision = 10 ** (18 - decimals)
         rates.append(rate * precision)
-<<<<<<< HEAD:tests/pools/aave/integration/test_kagla_starlay.py
     KaglaBase_model = KaglaBase(2 * 360, balances, n_coins, rates)
-=======
-    kagla_model = Kagla(2 * 360, balances, n_coins, rates)
->>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca:tests/pools/aave/integration/test_kagla_aave.py
 
     # execute a series of swaps and compare the python model to the contract results
     rates = [10 ** 18 for i in range(n_coins)]
@@ -67,11 +55,7 @@ def test_kagla_in_contract(
         dy_1_u = swap.get_dy_underlying(send, recv, dx)
         assert dy_1_u == dy_1_c
 
-<<<<<<< HEAD:tests/pools/aave/integration/test_kagla_starlay.py
         dy_2 = KaglaBase_model.dy(send, recv, dx * (10 ** (18 - wrapped_decimals[send])))
-=======
-        dy_2 = kagla_model.dy(send, recv, dx * (10 ** (18 - wrapped_decimals[send])))
->>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca:tests/pools/aave/integration/test_kagla_aave.py
         dy_2 //= 10 ** (18 - wrapped_decimals[recv])
 
         assert approx(dy_1_c, dy_2, 1e-8) or abs(dy_1_c - dy_2) <= 2

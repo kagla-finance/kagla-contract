@@ -1,13 +1,9 @@
 # @version ^0.2.0
 """
 @title "Zap" Depositer for Yearn-style lending tokens
-<<<<<<< HEAD
 @author KaglaBase.Fi
 @license Copyright (c) KaglaBase.Fi, 2020 - all rights reserved
 @notice deposit/withdraw KaglaBase contract without too many transactions
-=======
-@notice deposit/withdraw Kagla contract without too many transactions
->>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
 @dev This contract is only a template, pool-specific constants
      must be set prior to compiling
 """
@@ -20,11 +16,7 @@ interface yERC20:
     def withdraw(withdrawTokens: uint256): nonpayable
     def getPricePerFullShare() -> uint256: view
 
-<<<<<<< HEAD
 interface KaglaBase:
-=======
-interface Kagla:
->>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
     def add_liquidity(amounts: uint256[N_COINS], min_mint_amount: uint256) -> uint256: nonpayable
     def remove_liquidity(_amount: uint256, min_amounts: uint256[N_COINS]) -> uint256[N_COINS]: nonpayable
     def remove_liquidity_imbalance(amounts: uint256[N_COINS], max_burn_amount: uint256) -> uint256: nonpayable
@@ -48,11 +40,7 @@ FEE_IMPRECISION: constant(uint256) = 25 * 10 ** 8  # % of the fee
 
 coins: public(address[N_COINS])
 underlying_coins: public(address[N_COINS])
-<<<<<<< HEAD
 KaglaBase: public(address)
-=======
-kagla: public(address)
->>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
 lp_token: public(address)
 
 
@@ -60,11 +48,7 @@ lp_token: public(address)
 def __init__(
     _coins: address[N_COINS],
     _underlying_coins: address[N_COINS],
-<<<<<<< HEAD
     _KaglaBase: address,
-=======
-    _kagla: address,
->>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
     _token: address
 ):
     """
@@ -73,11 +57,7 @@ def __init__(
          for `_coins` and `_underlying_coins`
     @param _coins List of wrapped coin addresses
     @param _underlying_coins List of underlying coin addresses
-<<<<<<< HEAD
     @param _KaglaBase Pool address
-=======
-    @param _kagla Pool address
->>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
     @param _token Pool LP token address
     """
     for i in range(N_COINS):
@@ -100,11 +80,7 @@ def __init__(
             _coins[i],
             concat(
                 method_id("approve(address,uint256)"),
-<<<<<<< HEAD
                 convert(_KaglaBase, bytes32),
-=======
-                convert(_kagla, bytes32),
->>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
                 convert(MAX_UINT256, bytes32),
             ),
             max_outsize=32,
@@ -114,11 +90,7 @@ def __init__(
 
     self.coins = _coins
     self.underlying_coins = _underlying_coins
-<<<<<<< HEAD
     self.KaglaBase = _KaglaBase
-=======
-    self.kagla = _kagla
->>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
     self.lp_token = _token
 
 
@@ -160,11 +132,7 @@ def add_liquidity(_underlying_amounts: uint256[N_COINS], _min_mint_amount: uint2
             else:
                 wrapped_amounts[i] = amount
 
-<<<<<<< HEAD
     KaglaBase(self.KaglaBase).add_liquidity(wrapped_amounts, _min_mint_amount)
-=======
-    Kagla(self.kagla).add_liquidity(wrapped_amounts, _min_mint_amount)
->>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
 
     lp_token: address = self.lp_token
     lp_amount: uint256 = ERC20(lp_token).balanceOf(self)
@@ -222,11 +190,7 @@ def remove_liquidity(
     @return List of amounts of underlying coins that were withdrawn
     """
     assert ERC20(self.lp_token).transferFrom(msg.sender, self, _amount)
-<<<<<<< HEAD
     KaglaBase(self.KaglaBase).remove_liquidity(_amount, empty(uint256[N_COINS]))
-=======
-    Kagla(self.kagla).remove_liquidity(_amount, empty(uint256[N_COINS]))
->>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
 
     return self._unwrap_and_transfer(msg.sender, _min_underlying_amounts)
 
@@ -262,11 +226,7 @@ def remove_liquidity_imbalance(
         _lp_amount = _max_burn_amount
     assert ERC20(lp_token).transferFrom(msg.sender, self, _lp_amount)
 
-<<<<<<< HEAD
     KaglaBase(self.KaglaBase).remove_liquidity_imbalance(amounts, _max_burn_amount)
-=======
-    Kagla(self.kagla).remove_liquidity_imbalance(amounts, _max_burn_amount)
->>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
 
     # Transfer unused LP tokens back
     _lp_amount = ERC20(lp_token).balanceOf(self)
@@ -293,11 +253,7 @@ def remove_liquidity_one_coin(
     """
     assert ERC20(self.lp_token).transferFrom(msg.sender, self, _amount)
 
-<<<<<<< HEAD
     KaglaBase(self.KaglaBase).remove_liquidity_one_coin(_amount, i, 0)
-=======
-    Kagla(self.kagla).remove_liquidity_one_coin(_amount, i, 0)
->>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
 
     use_lending: bool[N_COINS] = USE_LENDING
     if use_lending[i]:

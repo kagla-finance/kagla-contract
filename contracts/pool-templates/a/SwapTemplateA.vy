@@ -1,14 +1,4 @@
 # @version ^0.2.8
-<<<<<<< HEAD
-=======
-"""
-@notice Pool implementation with aToken-style lending
-@dev This contract is only a template, pool-specific constants
-     must be set prior to compiling. Note that this template is
-     currently compatible with aTokens (Aave) and that for other
-     protocols selected parts in the code may need to be changed.
-"""
->>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
 
 from vyper.interfaces import ERC20
 

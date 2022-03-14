@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "lp_contract": "KaglaTokenV3",
   "pool_types": ["arate"],
   "wrapped_contract": "ATokenMock",
@@ -26,17 +25,6 @@
       "tethered": false,
       "underlying_address": "0x6b175474e89094c44da98b954eedeac495271d0f",
       "wrapped_address": "0x028171bCA77440897B824Ca71D1c56caC55b68A3"
-=======
-    "lp_contract": "KaglaTokenV3",
-    "pool_types": ["arate"],
-    "wrapped_contract": "ATokenMock",
-    "swap_address": "0xDeBF20617708857ebe4F679508E7b7863a8A8EeE",
-    "lp_token_address": "0xFd2a8fA60Abd58Efe3EeE34dd494cD491dC14900",
-    "gauge_addresses": ["0xd662908ADA2Ea1916B3318327A97eB18aD588b5d"],
-    "lp_constructor": {
-        "symbol": "a3CRV",
-        "name": "Kagla.finance aDAI/aUSDC/aUSDT"
->>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
     },
     {
       "name": "aUSDC",

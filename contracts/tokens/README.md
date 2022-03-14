@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # KaglaBase-contract/contracts/tokens
-=======
-# kagla-contract/contracts/tokens
->>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
 
 [ERC20](https://eips.ethereum.org/EIPS/eip-20) contracts used for pool liquidity provider tokens.
 

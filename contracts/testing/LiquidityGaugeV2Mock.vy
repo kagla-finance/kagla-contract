@@ -1,11 +1,8 @@
 # @version 0.2.8
 """
 @title Liquidity Gauge v2
-<<<<<<< HEAD
 @author KaglaBase Finance
 @license MIT
-=======
->>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
 """
 
 from vyper.interfaces import ERC20

@@ -1,14 +1,4 @@
 # @version 0.2.11
-<<<<<<< HEAD
-=======
-"""
-@title Kagla Pool Rate Calculator 
-@notice Logic for calculating exchange rate for a pool
-@dev This contract is only a template, pool-specific logic
-    must be added
-"""
-
->>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
 
 @view
 @external

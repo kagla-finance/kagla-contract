@@ -1,12 +1,5 @@
 # @version ^0.2.8
-<<<<<<< HEAD
 
-=======
-"""
-@dev This contract is only a template, pool-specific constants
-     must be set prior to compiling
-"""
->>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
 
 from vyper.interfaces import ERC20
 

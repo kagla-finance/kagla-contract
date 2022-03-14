@@ -1,14 +1,4 @@
 # @version ^0.2.8
-<<<<<<< HEAD
-=======
-"""
-@dev This contract is only a template, pool-specific constants
-     must be set prior to compiling. Note that this template 
-     contains optimizations that depend upon every token within
-     the pool using 18 decimal places and should therefore be 
-     dealt with accordingly.
-"""
->>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
 
 from vyper.interfaces import ERC20
 

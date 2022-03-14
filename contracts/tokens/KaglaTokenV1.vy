@@ -1,11 +1,7 @@
 # @version 0.1.0b16
 
-<<<<<<< HEAD:contracts/tokens/KaglaTokenV1.vy
 # @title KaglaBase LP Token
 # @author KaglaBase.Fi
-=======
-# @title Kagla LP Token
->>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca:contracts/tokens/CurveTokenV1.vy
 # @notice Used in combination with all pools compiled by vyper 0.1.0-beta.x
 # @dev Follows the ERC-20 token standard as defined at
 #      https://eips.ethereum.org/EIPS/eip-20
