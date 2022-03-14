@@ -6,7 +6,7 @@
   "gauge_addresses": ["0x705350c4BcD35c9441419DdD5d2f097d7a55410F"],
   "lp_constructor": {
     "name": "KaglaBase.fi renBTC/wBTC/sBTC",
-    "symbol": "crvRenWSBTC"
+    "symbol": "kglRenWSBTC"
   },
   "coins": [
     {

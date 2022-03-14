@@ -7,8 +7,8 @@
   "gauge_addresses": ["0xAEA6c312f4b3E04D752946d329693F7293bC2e6D"],
   "lp_contract": "KaglaTokenV2",
   "lp_constructor": {
-    "symbol": "dusd3CRV",
-    "name": "KaglaBase.fi DUSD/3Crv"
+    "symbol": "dusd3KGL",
+    "name": "KaglaBase.fi DUSD/3Kgl"
   },
   "swap_constructor": {
     "_A": 200,
@@ -23,7 +23,7 @@
       "underlying_address": "0x5bc25f649fc4e26069ddf4cf4010f9f706c23831"
     },
     {
-      "name": "3CRV",
+      "name": "3KGL",
       "decimals": 18,
       "base_pool_token": true,
       "underlying_address": "0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490"

@@ -7,7 +7,7 @@
   "gauge_addresses": ["0x64E3C23bfc40722d3B649844055F1D51c1ac041d"],
   "lp_constructor": {
     "name": "KaglaBase.fi DAI/USDC/USDT/PAX",
-    "symbol": "ypaxCrv"
+    "symbol": "ypaxKgl"
   },
   "coins": [
     {

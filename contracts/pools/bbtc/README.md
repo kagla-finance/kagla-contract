@@ -23,7 +23,7 @@ KaglaBase bBTC metapool utilizes the supports swaps between the following assets
 Direct swaps are possible between bBTC and the KaglaBase sBTC LP token.
 
 * `bBTC`: [0x9be89d2a4cd102d8fecc6bf9da793be995c22541](https://etherscan.io/address/0x9be89d2a4cd102d8fecc6bf9da793be995c22541)
-* `sbtcCRV`: [0x075b1bb99792c9E1041bA13afEf80C91a1e70fB3](https://etherscan.io/address/0x075b1bb99792c9E1041bA13afEf80C91a1e70fB3)
+* `sbtcKGL`: [0x075b1bb99792c9E1041bA13afEf80C91a1e70fB3](https://etherscan.io/address/0x075b1bb99792c9E1041bA13afEf80C91a1e70fB3)
 
 ## Base Pool coins
 

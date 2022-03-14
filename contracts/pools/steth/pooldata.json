@@ -5,7 +5,7 @@
   "lp_token_address": "0x06325440D014e39736583c165C2963BA99fAf14E",
   "gauge_addresses": ["0x182B723a58739a9c974cFDB385ceaDb237453c28"],
   "lp_constructor": {
-    "symbol": "steCRV",
+    "symbol": "steKGL",
     "name": "KaglaBase.fi ETH/stETH"
   },
   "swap_constructor": {

@@ -244,9 +244,9 @@ def _calc_withdraw_one_coin(_token_amount: uint256, i: int128, rates: uint256[N_
     # First, need to calculate
     # * Get current D
     # * Solve Eqn against y_i for D - _token_amount
-    crv: address = self.KaglaBase
-    A: uint256 = KaglaBase(crv).A()
-    fee: uint256 = KaglaBase(crv).fee() * N_COINS / (4 * (N_COINS - 1))
+    kgl: address = self.KaglaBase
+    A: uint256 = KaglaBase(kgl).A()
+    fee: uint256 = KaglaBase(kgl).fee() * N_COINS / (4 * (N_COINS - 1))
     fee += fee * FEE_IMPRECISION / FEE_DENOMINATOR  # Overcharge to account for imprecision
     precisions: uint256[N_COINS] = PRECISION_MUL
     total_supply: uint256 = ERC20(self.token).totalSupply()
@@ -254,7 +254,7 @@ def _calc_withdraw_one_coin(_token_amount: uint256, i: int128, rates: uint256[N_
     xp: uint256[N_COINS] = PRECISION_MUL
     S: uint256 = 0
     for j in range(N_COINS):
-        xp[j] *= KaglaBase(crv).balances(j)
+        xp[j] *= KaglaBase(kgl).balances(j)
         xp[j] = xp[j] * rates[j] / LENDING_PRECISION
         S += xp[j]
 

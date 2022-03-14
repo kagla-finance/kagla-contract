@@ -5,7 +5,7 @@
   "gauge_addresses": ["0xbFcF63294aD7105dEa65aA58F8AE5BE2D9d0952A"],
   "lp_constructor": {
     "name": "KaglaBase.fi DAI/USDC/USDT",
-    "symbol": "3Crv"
+    "symbol": "3Kgl"
   },
   "coins": [
     {

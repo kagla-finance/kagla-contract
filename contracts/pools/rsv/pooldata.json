@@ -7,8 +7,8 @@
   "gauge_addresses": ["0x4dC4A289a8E33600D8bD4cf5F6313E43a37adec7"],
   "lp_contract": "KaglaTokenV2",
   "lp_constructor": {
-    "symbol": "rsv3CRV",
-    "name": "KaglaBase.fi RSV/3Crv"
+    "symbol": "rsv3KGL",
+    "name": "KaglaBase.fi RSV/3Kgl"
   },
   "swap_constructor": {
     "_A": 200,
@@ -23,7 +23,7 @@
       "underlying_address": "0x196f4727526eA7FB1e17b2071B3d8eAA38486988"
     },
     {
-      "name": "3CRV",
+      "name": "3KGL",
       "decimals": 18,
       "base_pool_token": true,
       "underlying_address": "0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490"

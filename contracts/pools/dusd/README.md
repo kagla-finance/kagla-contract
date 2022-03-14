@@ -23,7 +23,7 @@ KaglaBase DUSD metapool utilizes the supports swaps between the following assets
 Direct swaps are possible between DUSD and the KaglaBase tri-pool LP token.
 
 * `DUSD`: [0x5bc25f649fc4e26069ddf4cf4010f9f706c23831](https://etherscan.io/address/0x5bc25f649fc4e26069ddf4cf4010f9f706c23831)
-* `3CRV`: [0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490](https://etherscan.io/address/0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490)
+* `3KGL`: [0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490](https://etherscan.io/address/0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490)
 
 ## Base Pool coins
 

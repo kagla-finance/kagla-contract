@@ -23,7 +23,7 @@ KaglaBase LINKUSD metapool utilizes the supports swaps between the following ass
 Direct swaps are possible between LINKUSD and the KaglaBase tri-pool LP token.
 
 * `LINKUSD`: [0x0E2EC54fC0B509F445631Bf4b91AB8168230C752](https://etherscan.io/address/0x0E2EC54fC0B509F445631Bf4b91AB8168230C752)
-* `3CRV`: [0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490](https://etherscan.io/address/0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490)
+* `3KGL`: [0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490](https://etherscan.io/address/0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490)
 
 ## Base Pool coins
 

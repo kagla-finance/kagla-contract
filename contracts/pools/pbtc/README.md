@@ -23,7 +23,7 @@ KaglaBase pBTC metapool utilizes the supports swaps between the following assets
 Direct swaps are possible between pBTC and the KaglaBase sBTC LP token.
 
 * `pBTC`: [0x5228a22e72ccC52d415EcFd199F99D0665E7733b](https://etherscan.io/address/0x5228a22e72ccC52d415EcFd199F99D0665E7733b)
-* `sbtcCRV`: [0x075b1bb99792c9E1041bA13afEf80C91a1e70fB3](https://etherscan.io/address/0x075b1bb99792c9E1041bA13afEf80C91a1e70fB3)
+* `sbtcKGL`: [0x075b1bb99792c9E1041bA13afEf80C91a1e70fB3](https://etherscan.io/address/0x075b1bb99792c9E1041bA13afEf80C91a1e70fB3)
 
 ## Base Pool coins
 

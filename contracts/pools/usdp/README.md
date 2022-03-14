@@ -23,7 +23,7 @@ KaglaBase USDP metapool utilizes the supports swaps between the following assets
 Direct swaps are possible between USDP and the KaglaBase tri-pool LP token.
 
 * `USDP`: [0x1456688345527bE1f37E9e627DA0837D6f08C925](https://etherscan.io/address/0x1456688345527bE1f37E9e627DA0837D6f08C925)
-* `3CRV`: [0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490](https://etherscan.io/address/0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490)
+* `3KGL`: [0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490](https://etherscan.io/address/0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490)
 
 ## Base Pool coins
 

@@ -6,7 +6,7 @@
   "lp_token_address": "0xFd2a8fA60Abd58Efe3EeE34dd494cD491dC14900",
   "gauge_addresses": ["0xd662908ADA2Ea1916B3318327A97eB18aD588b5d"],
   "lp_constructor": {
-    "symbol": "a3CRV",
+    "symbol": "a3KGL",
     "name": "KaglaBase.fi aDAI/aUSDC/aUSDT"
   },
   "swap_constructor": {

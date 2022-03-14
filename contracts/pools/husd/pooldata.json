@@ -7,8 +7,8 @@
   "zap_address": "0x09672362833d8f703D5395ef3252D4Bfa51c15ca",
   "gauge_addresses": ["0x2db0E83599a91b508Ac268a6197b8B14F5e72840"],
   "lp_constructor": {
-    "symbol": "husd3CRV",
-    "name": "KaglaBase.fi HUSD/3Crv"
+    "symbol": "husd3KGL",
+    "name": "KaglaBase.fi HUSD/3Kgl"
   },
   "swap_constructor": {
     "_A": 200,
@@ -23,7 +23,7 @@
       "underlying_address": "0xdf574c24545e5ffecb9a659c229253d4111d87e1"
     },
     {
-      "name": "3CRV",
+      "name": "3KGL",
       "decimals": 18,
       "base_pool_token": true,
       "underlying_address": "0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490"

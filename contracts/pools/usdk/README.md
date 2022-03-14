@@ -23,7 +23,7 @@ KaglaBase USDK metapool utilizes the supports swaps between the following assets
 Direct swaps are possible between USDK and the KaglaBase tri-pool LP token.
 
 * `USDK`: [0x1c48f86ae57291f7686349f12601910bd8d470bb](https://etherscan.io/address/0x1c48f86ae57291f7686349f12601910bd8d470bb)
-* `3CRV`: [0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490](https://etherscan.io/address/0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490)
+* `3KGL`: [0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490](https://etherscan.io/address/0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490)
 
 ## Base Pool coins
 

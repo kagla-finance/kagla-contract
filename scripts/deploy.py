@@ -14,8 +14,8 @@ REQUIRED_CONFIRMATIONS = 1
 POOL_NAME = ""
 
 # temporary owner address
-POOL_OWNER = "0xedf2c58e16cc606da1977e79e1e69e79c54fe242"
-GAUGE_OWNER = "0xedf2c58e16cc606da1977e79e1e69e79c54fe242"
+POOL_OWNER = "0x50414Ac6431279824df9968855181474c919a94B"
+GAUGE_OWNER = "0x50414Ac6431279824df9968855181474c919a94B"
 
 MINTER = "0xd061D61a4d941c39E5453435B6345Dc261C2fcE0"
 
@@ -75,7 +75,7 @@ def main():
     token.set_minter(swap, _tx_params())
 
     # deploy the liquidity gauge
-    LiquidityGaugeV3 = load_project("KaglaBasefi/KaglaBase-dao-contracts@1.2.0").LiquidityGaugeV3
+    LiquidityGaugeV3 = load_project("kagla-finance/kagla-dao-contracts@0.0.2").LiquidityGaugeV3
     LiquidityGaugeV3.deploy(token, MINTER, GAUGE_OWNER, _tx_params())
 
     # deploy the zap

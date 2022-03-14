@@ -5,7 +5,7 @@
   "lp_token_address": "0xA3D87FffcE63B53E0d54fAa1cc983B7eB0b74A9c",
   "gauge_addresses": ["0x3C0FFFF15EA30C35d7A85B85c0782D6c94e1d238"],
   "lp_constructor": {
-    "symbol": "eCRV",
+    "symbol": "eKGL",
     "name": "KaglaBase.fi ETH/sETH"
   },
   "swap_constructor": {

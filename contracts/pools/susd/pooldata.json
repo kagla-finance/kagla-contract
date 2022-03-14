@@ -6,7 +6,7 @@
   "gauge_addresses": ["0xA90996896660DEcC6E997655E065b23788857849"],
   "lp_constructor": {
     "name": "KaglaBase.fi DAI/USDC/USDT/sUSD",
-    "symbol": "crvPlain3andSUSD"
+    "symbol": "kglPlain3andSUSD"
   },
   "coins": [
     {

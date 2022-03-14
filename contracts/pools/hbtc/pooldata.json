@@ -5,7 +5,7 @@
   "gauge_addresses": ["0x4c18E409Dc8619bFb6a1cB56D114C3f592E0aE79"],
   "lp_constructor": {
     "name": "KaglaBase.fi hBTC/wBTC",
-    "symbol": "hCRV"
+    "symbol": "hKGL"
   },
   "coins": [
     {

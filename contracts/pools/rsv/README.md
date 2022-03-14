@@ -23,7 +23,7 @@ KaglaBase RSV metapool utilizes the supports swaps between the following assets:
 Direct swaps are possible between RSV and the KaglaBase tri-pool LP token.
 
 * `RSV`: [0x196f4727526eA7FB1e17b2071B3d8eAA38486988](https://etherscan.io/address/0x196f4727526eA7FB1e17b2071B3d8eAA38486988)
-* `3CRV`: [0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490](https://etherscan.io/address/0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490)
+* `3KGL`: [0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490](https://etherscan.io/address/0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490)
 
 ## Base Pool coins
 

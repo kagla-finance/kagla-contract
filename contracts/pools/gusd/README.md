@@ -23,7 +23,7 @@ KaglaBase GUSD metapool utilizes the supports swaps between the following assets
 Direct swaps are possible between GUSD and the KaglaBase tri-pool LP token.
 
 * `GUSD`: [0x056fd409e1d7a124bd7017459dfea2f387b6d5cd](https://etherscan.io/address/0x056fd409e1d7a124bd7017459dfea2f387b6d5cd)
-* `3CRV`: [0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490](https://etherscan.io/address/0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490)
+* `3KGL`: [0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490](https://etherscan.io/address/0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490)
 
 ## Base Pool coins
 

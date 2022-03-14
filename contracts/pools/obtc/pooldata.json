@@ -7,8 +7,8 @@
   "gauge_addresses": ["0x11137B10C210b579405c21A07489e28F3c040AB1"],
   "lp_contract": "KaglaTokenV3",
   "lp_constructor": {
-    "symbol": "oBTC/sbtcCRV",
-    "name": "KaglaBase.fi oBTC/sbtcCRV"
+    "symbol": "oBTC/sbtcKGL",
+    "name": "KaglaBase.fi oBTC/sbtcKGL"
   },
   "swap_constructor": {
     "_A": 200,
@@ -24,7 +24,7 @@
       "underlying_address": "0x8064d9Ae6cDf087b1bcd5BDf3531bD5d8C537a68"
     },
     {
-      "name": "sbtcCRV",
+      "name": "sbtcKGL",
       "decimals": 18,
       "wrapped": false,
       "base_pool_token": true,
