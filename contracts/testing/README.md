@@ -1,6 +1,6 @@
-# KaglaBase-contract/contracts/testing
+# kagla-contract/contracts/testing
 
-Contracts used exclusively for testing. These are not considered part of KaglaBase and so do not fall under the KaglaBase [license](../../LICENSE).
+Contracts used exclusively for testing. These are not considered part of Kagla and so do not fall under the Kagla [license](../../LICENSE).
 
 ## Contracts
 

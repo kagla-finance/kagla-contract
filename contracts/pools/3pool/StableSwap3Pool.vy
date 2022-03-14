@@ -1,10 +1,10 @@
 # @version 0.2.4
-# (c) KaglaBase.Fi, 2020
+# (c) Curve.Fi, 2020
 # Pool for DAI/USDC/USDT
 
 from vyper.interfaces import ERC20
 
-interface KaglaToken:
+interface CurveToken:
     def totalSupply() -> uint256: view
     def mint(_to: address, _value: uint256) -> bool: nonpayable
     def burnFrom(_to: address, _value: uint256) -> bool: nonpayable
@@ -96,7 +96,7 @@ fee: public(uint256)  # fee * 1e10
 admin_fee: public(uint256)  # admin_fee * 1e10
 
 owner: public(address)
-token: KaglaToken
+token: CurveToken
 
 initial_A: public(uint256)
 future_A: public(uint256)
@@ -141,7 +141,7 @@ def __init__(
     self.admin_fee = _admin_fee
     self.owner = _owner
     self.kill_deadline = block.timestamp + KILL_DEADLINE_DT
-    self.token = KaglaToken(_pool_token)
+    self.token = CurveToken(_pool_token)
 
 
 @view

@@ -7,7 +7,7 @@
   "gauge_addresses": ["0xd662908ADA2Ea1916B3318327A97eB18aD588b5d"],
   "lp_constructor": {
     "symbol": "a3KGL",
-    "name": "KaglaBase.fi aDAI/aUSDC/aUSDT"
+    "name": "Kagla.finance aDAI/aUSDC/aUSDT"
   },
   "swap_constructor": {
     "_A": 200,

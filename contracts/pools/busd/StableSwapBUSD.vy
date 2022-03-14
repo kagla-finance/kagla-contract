@@ -1,5 +1,5 @@
 # @version 0.1.0b16
-# (c) KaglaBase.Fi, 2020
+
 
 
 # External Contracts

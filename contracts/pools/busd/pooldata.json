@@ -6,7 +6,7 @@
   "zap_address": "0xb6c057591e073249f2d9d88ba59a46cfc9b59edb",
   "gauge_addresses": ["0x69Fb7c45726cfE2baDeE8317005d3F94bE838840"],
   "lp_constructor": {
-    "name": "KaglaBase.fi yDAI/yUSDC/yUSDT/yBUSD",
+    "name": "Kagla.finance yDAI/yUSDC/yUSDT/yBUSD",
     "symbol": "yDAI+yUSDC+yUSDT+yBUSD"
   },
   "coins": [

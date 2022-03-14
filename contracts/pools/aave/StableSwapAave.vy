@@ -1,4 +1,10 @@
 # @version 0.2.8
+"""
+@title Kagla aPool
+
+
+@notice Pool implementation with aToken-style lending
+"""
 
 from vyper.interfaces import ERC20
 
@@ -181,6 +187,7 @@ def __init__(
         )
         if len(_response) != 0:
             assert convert(_response, bool)
+
 
 
 @view

@@ -1,6 +1,6 @@
-# KaglaBase-contract/tests/fixtures
+# kagla-contract/tests/fixtures
 
-Pytest fixtures used in KaglaBase's test suite.
+Pytest fixtures used in Kagla's test suite.
 
 ## Files
 

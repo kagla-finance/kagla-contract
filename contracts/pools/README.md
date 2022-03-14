@@ -1,38 +1,38 @@
-# KaglaBase-contract/contracts/pools
+# kagla-contract/contracts/pools
 
-Deployed KaglaBase pool contracts.
+Deployed Kagla pool contracts.
 
 ## Subdirectories
 
-Each subdirectory holds contracts and other files specific to a single KaglaBase pool.
+Each subdirectory holds contracts and other files specific to a single Kagla pool.
 
-* [`3pool`](3pool): [Tri-pool](https://www.KaglaBase.fi/3pool)
-* [`aave`](aave): [Aave pool](https://www.KaglaBase.fi/aave), with lending on [Aave](https://www.aave.com/)
-* [`bbtc`](bbtc): [bBTC metapool](https://www.KaglaBase.fi/bbtc)
-* [`busd`](busd): [BUSD pool](https://www.KaglaBase.fi/busd), with lending on [yearn.finance](https://yearn.finance/)
-* [`compound`](compound): [Compound pool](https://www.KaglaBase.fi/compound), with lending on [Compound](https://compound.finance/)
-* [`dusd`](dusd): [DUSD metapool](https://www.KaglaBase.fi/dusd)
-* [`eurs`](eurs): [EURS pool](https://www.KaglaBase.fi/eurs)
-* [`gusd`](gusd): [GUSD metapool](https://www.KaglaBase.fi/gusd)
-* [`hbtc`](hbtc): [hBTC pool](https://www.KaglaBase.fi/hbtc)
-* [`husd`](husd): [HUSD metapool](https://www.KaglaBase.fi/husd)
-* [`linkusd`](linkusd): [LinkUSD metapool](https://www.KaglaBase.fi/linkusd)
-* [`musd`](musd): [MUSD metapool](https://www.KaglaBase.fi/musd)
-* [`obtc`](obtc): [oBTC metapool](https://www.KaglaBase.fi/obtc)
-* [`pax`](pax): [PAX pool](https://www.KaglaBase.fi/pax), with lending on [yearn.finance](https://yearn.finance/)
-* [`pbtc`](pbtc): [pBTC metapool](https://www.KaglaBase.fi/pbtc)
-* [`ren`](ren): [RenBTC pool](https://www.KaglaBase.fi/ren)
-* [`rsv`](rsv): [RSV metapool](https://www.KaglaBase.fi/rsv)
-* [`sbtc`](sbtc): [sBTC pool](https://www.KaglaBase.fi/sbtc)
-* [`seth`](seth): [sETH pool](https://www.KaglaBase.fi/seth)
-* [`steth`](steth): [stETH pool](https://www.KaglaBase.fi/steth)
-* [`susd`](susd): [sUSD pool](https://www.KaglaBase.fi/susdv2)
-* [`tbtc`](tbtc): [tBTC metapool](https://www.KaglaBase.fi/tbtc)
-* [`usdk`](usdk): [USDK metapool](https://www.KaglaBase.fi/usdk)
-* [`usdn`](usdn): [USDN metapool](https://www.KaglaBase.fi/usdn)
-* [`usdt`](usdt): [USDT pool](https://www.KaglaBase.fi/usdt), with lending on [Compound](https://compound.finance/)
-* [`ust`](ust): [UST metapool](https://www.KaglaBase.fi/usdn)
-* [`y`](y): [Y pool](https://www.KaglaBase.fi/y), with lending on [yearn.finance](https://yearn.finance/)
+* [`3pool`](3pool): [Tri-pool](https://www.kagla.finance/3pool)
+* [`aave`](aave): [Aave pool](https://www.kagla.finance/aave), with lending on [Aave](https://www.aave.com/)
+* [`bbtc`](bbtc): [bBTC metapool](https://www.kagla.finance/bbtc)
+* [`busd`](busd): [BUSD pool](https://www.kagla.finance/busd), with lending on [yearn.finance](https://yearn.finance/)
+* [`compound`](compound): [Compound pool](https://www.kagla.finance/compound), with lending on [Compound](https://compound.finance/)
+* [`dusd`](dusd): [DUSD metapool](https://www.kagla.finance/dusd)
+* [`eurs`](eurs): [EURS pool](https://www.kagla.finance/eurs)
+* [`gusd`](gusd): [GUSD metapool](https://www.kagla.finance/gusd)
+* [`hbtc`](hbtc): [hBTC pool](https://www.kagla.finance/hbtc)
+* [`husd`](husd): [HUSD metapool](https://www.kagla.finance/husd)
+* [`linkusd`](linkusd): [LinkUSD metapool](https://www.kagla.finance/linkusd)
+* [`musd`](musd): [MUSD metapool](https://www.kagla.finance/musd)
+* [`obtc`](obtc): [oBTC metapool](https://www.kagla.finance/obtc)
+* [`pax`](pax): [PAX pool](https://www.kagla.finance/pax), with lending on [yearn.finance](https://yearn.finance/)
+* [`pbtc`](pbtc): [pBTC metapool](https://www.kagla.finance/pbtc)
+* [`ren`](ren): [RenBTC pool](https://www.kagla.finance/ren)
+* [`rsv`](rsv): [RSV metapool](https://www.kagla.finance/rsv)
+* [`sbtc`](sbtc): [sBTC pool](https://www.kagla.finance/sbtc)
+* [`seth`](seth): [sETH pool](https://www.kagla.finance/seth)
+* [`steth`](steth): [stETH pool](https://www.kagla.finance/steth)
+* [`susd`](susd): [sUSD pool](https://www.kagla.finance/susdv2)
+* [`tbtc`](tbtc): [tBTC metapool](https://www.kagla.finance/tbtc)
+* [`usdk`](usdk): [USDK metapool](https://www.kagla.finance/usdk)
+* [`usdn`](usdn): [USDN metapool](https://www.kagla.finance/usdn)
+* [`usdt`](usdt): [USDT pool](https://www.kagla.finance/usdt), with lending on [Compound](https://compound.finance/)
+* [`ust`](ust): [UST metapool](https://www.kagla.finance/usdn)
+* [`y`](y): [Y pool](https://www.kagla.finance/y), with lending on [yearn.finance](https://yearn.finance/)
 
 ## Development
 
@@ -89,7 +89,7 @@ The `pooldata.json` for a metapool is similar to that of a regular pool:
 
 ```js
 {
-    "lp_contract": "KaglaBaseContractV2",  // LP token contract to use with this pool, from `contracts/tokens`
+    "lp_contract": "KaglaContractV2",  // LP token contract to use with this pool, from `contracts/tokens`
     "base_pool": "3pool",              // Name for the related base pool
     "coins": [
         {

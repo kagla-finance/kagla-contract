@@ -1,4 +1,15 @@
 # @version ^0.2.8
+"""
+@title StableSwap
+
+
+@notice Kagla ETH pool implementation
+@dev This contract is only a template, pool-specific constants
+     must be set prior to compiling. Note that this template 
+     contains optimizations that depend upon every token within
+     the pool using 18 decimal places and should therefore be 
+     dealt with accordingly.
+"""
 
 from vyper.interfaces import ERC20
 

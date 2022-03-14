@@ -1,6 +1,6 @@
-# KaglaBase-contract/tests
+# kagla-contract/tests
 
-Test cases for KaglaBase pools.
+Test cases for Kagla pools.
 
 ## Subdirectories
 
@@ -13,7 +13,7 @@ Test cases for KaglaBase pools.
 ## Files
 
 - [`conftest.py`](conftest.py): Base configuration file for the test suite.
-- [`simulation.py`](simulation.py): A python model of the math used within KaglaBase's contracts. Used for testing expected outcomes with actual results.
+- [`simulation.py`](simulation.py): A python model of the math used within Kagla's contracts. Used for testing expected outcomes with actual results.
 
 ## Organization
 

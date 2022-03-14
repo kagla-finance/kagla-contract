@@ -1,4 +1,12 @@
 # @version ^0.2.8
+"""
+@title StableSwap
+
+
+@notice Pool implementation with Yearn-style lending
+@dev This contract is only a template, pool-specific constants
+     must be set prior to compiling
+"""
 
 from vyper.interfaces import ERC20
 

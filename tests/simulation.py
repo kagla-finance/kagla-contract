@@ -1,7 +1,7 @@
-class KaglaBase:
+class Kagla:
 
     """
-    Python model of KaglaBase pool math.
+    Python model of Kagla pool math.
     """
 
     def __init__(self, A, D, n, p=None, tokens=None):
