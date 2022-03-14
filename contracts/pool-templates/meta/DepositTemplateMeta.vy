@@ -1,5 +1,13 @@
 # @version ^0.2.12
+<<<<<<< HEAD
 
+=======
+"""
+@title "Zap" Depositer for metapool
+@dev This contract is only a template, pool-specific constants
+     must be set prior to compiling
+"""
+>>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
 
 from vyper.interfaces import ERC20
 
@@ -140,11 +148,19 @@ def add_liquidity(_amounts: uint256[N_ALL_COINS], _min_mint_amount: uint256) -> 
 
     # Deposit to the base pool
     if deposit_base:
+<<<<<<< HEAD
         KaglaBaseBase(self.base_pool).add_liquidity(base_amounts, 0)
         meta_amounts[MAX_COIN] = ERC20(self.coins[MAX_COIN]).balanceOf(self)
 
     # Deposit to the meta pool
     KaglaBaseMeta(self.pool).add_liquidity(meta_amounts, _min_mint_amount)
+=======
+        KaglaBase(self.base_pool).add_liquidity(base_amounts, 0)
+        meta_amounts[MAX_COIN] = ERC20(self.coins[MAX_COIN]).balanceOf(self)
+
+    # Deposit to the meta pool
+    KaglaMeta(self.pool).add_liquidity(meta_amounts, _min_mint_amount)
+>>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
 
     # Transfer meta token back
     lp_token: address = self.token
@@ -173,13 +189,21 @@ def remove_liquidity(_amount: uint256, _min_amounts: uint256[N_ALL_COINS]) -> ui
     # Withdraw from meta
     for i in range(MAX_COIN):
         min_amounts_meta[i] = _min_amounts[i]
+<<<<<<< HEAD
     KaglaBaseMeta(self.pool).remove_liquidity(_amount, min_amounts_meta)
+=======
+    KaglaMeta(self.pool).remove_liquidity(_amount, min_amounts_meta)
+>>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
 
     # Withdraw from base
     _base_amount: uint256 = ERC20(self.coins[MAX_COIN]).balanceOf(self)
     for i in range(BASE_N_COINS):
         min_amounts_base[i] = _min_amounts[MAX_COIN+i]
+<<<<<<< HEAD
     KaglaBaseBase(self.base_pool).remove_liquidity(_base_amount, min_amounts_base)
+=======
+    KaglaBase(self.base_pool).remove_liquidity(_base_amount, min_amounts_base)
+>>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
 
     # Transfer all coins out
     for i in range(N_ALL_COINS):
@@ -221,12 +245,21 @@ def remove_liquidity_one_coin(_token_amount: uint256, i: int128, _min_amount: ui
     if i < MAX_COIN:
         coin = self.coins[i]
         # Withdraw a metapool coin
+<<<<<<< HEAD
         KaglaBaseMeta(self.pool).remove_liquidity_one_coin(_token_amount, i, _min_amount)
     else:
         coin = self.base_coins[i - MAX_COIN]
         # Withdraw a base pool coin
         KaglaBaseMeta(self.pool).remove_liquidity_one_coin(_token_amount, MAX_COIN, 0)
         KaglaBaseBase(self.base_pool).remove_liquidity_one_coin(
+=======
+        KaglaMeta(self.pool).remove_liquidity_one_coin(_token_amount, i, _min_amount)
+    else:
+        coin = self.base_coins[i - MAX_COIN]
+        # Withdraw a base pool coin
+        KaglaMeta(self.pool).remove_liquidity_one_coin(_token_amount, MAX_COIN, 0)
+        KaglaBase(self.base_pool).remove_liquidity_one_coin(
+>>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
             ERC20(self.coins[MAX_COIN]).balanceOf(self), i-MAX_COIN, _min_amount
         )
 
@@ -263,7 +296,11 @@ def remove_liquidity_imbalance(_amounts: uint256[N_ALL_COINS], _max_burn_amount:
     meta_coins: address[N_COINS] = self.coins
     lp_token: address = self.token
 
+<<<<<<< HEAD
     fee: uint256 = KaglaBaseBase(base_pool).fee() * BASE_N_COINS / (4 * (BASE_N_COINS - 1))
+=======
+    fee: uint256 = KaglaBase(base_pool).fee() * BASE_N_COINS / (4 * (BASE_N_COINS - 1))
+>>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
     fee += fee * FEE_IMPRECISION / FEE_DENOMINATOR  # Overcharge to account for imprecision
 
     # Transfer the LP token in
@@ -285,6 +322,7 @@ def remove_liquidity_imbalance(_amounts: uint256[N_ALL_COINS], _max_burn_amount:
             withdraw_base = True
 
     if withdraw_base:
+<<<<<<< HEAD
         amounts_meta[MAX_COIN] = KaglaBaseBase(self.base_pool).calc_token_amount(amounts_base, False)
         amounts_meta[MAX_COIN] += amounts_meta[MAX_COIN] * fee / FEE_DENOMINATOR + 1
 
@@ -295,6 +333,18 @@ def remove_liquidity_imbalance(_amounts: uint256[N_ALL_COINS], _max_burn_amount:
         leftover_amounts[MAX_COIN] = ERC20(meta_coins[MAX_COIN]).balanceOf(self)
         if leftover_amounts[MAX_COIN] > 0:
             KaglaBaseMeta(meta_pool).add_liquidity(leftover_amounts, 0)
+=======
+        amounts_meta[MAX_COIN] = KaglaBase(self.base_pool).calc_token_amount(amounts_base, False)
+        amounts_meta[MAX_COIN] += amounts_meta[MAX_COIN] * fee / FEE_DENOMINATOR + 1
+
+    # Remove liquidity and deposit leftovers back
+    KaglaMeta(meta_pool).remove_liquidity_imbalance(amounts_meta, _max_burn_amount)
+    if withdraw_base:
+        KaglaBase(base_pool).remove_liquidity_imbalance(amounts_base, amounts_meta[MAX_COIN])
+        leftover_amounts[MAX_COIN] = ERC20(meta_coins[MAX_COIN]).balanceOf(self)
+        if leftover_amounts[MAX_COIN] > 0:
+            KaglaMeta(meta_pool).add_liquidity(leftover_amounts, 0)
+>>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
 
     # Transfer all coins out
     for i in range(N_ALL_COINS):
@@ -339,10 +389,17 @@ def calc_withdraw_one_coin(_token_amount: uint256, i: int128) -> uint256:
     @return Amount of coin received
     """
     if i < MAX_COIN:
+<<<<<<< HEAD
         return KaglaBaseMeta(self.pool).calc_withdraw_one_coin(_token_amount, i)
     else:
         base_tokens: uint256 = KaglaBaseMeta(self.pool).calc_withdraw_one_coin(_token_amount, MAX_COIN)
         return KaglaBaseBase(self.base_pool).calc_withdraw_one_coin(base_tokens, i-MAX_COIN)
+=======
+        return KaglaMeta(self.pool).calc_withdraw_one_coin(_token_amount, i)
+    else:
+        base_tokens: uint256 = KaglaMeta(self.pool).calc_withdraw_one_coin(_token_amount, MAX_COIN)
+        return KaglaBase(self.base_pool).calc_withdraw_one_coin(base_tokens, i-MAX_COIN)
+>>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
 
 
 @view
@@ -365,7 +422,14 @@ def calc_token_amount(_amounts: uint256[N_ALL_COINS], _is_deposit: bool) -> uint
     for i in range(BASE_N_COINS):
         base_amounts[i] = _amounts[i + MAX_COIN]
 
+<<<<<<< HEAD
     base_tokens: uint256 = KaglaBaseBase(self.base_pool).calc_token_amount(base_amounts, _is_deposit)
     meta_amounts[MAX_COIN] = base_tokens
 
     return KaglaBaseMeta(self.pool).calc_token_amount(meta_amounts, _is_deposit)
+=======
+    base_tokens: uint256 = KaglaBase(self.base_pool).calc_token_amount(base_amounts, _is_deposit)
+    meta_amounts[MAX_COIN] = base_tokens
+
+    return KaglaMeta(self.pool).calc_token_amount(meta_amounts, _is_deposit)
+>>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca

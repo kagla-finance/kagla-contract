@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 # KaglaBase-contract/tests/fixtures
 
 Pytest fixtures used in KaglaBase's test suite.
+=======
+# kagla-contract/tests/fixtures
+
+Pytest fixtures used in Kagla's test suite.
+>>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
 
 ## Files
 

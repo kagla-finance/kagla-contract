@@ -1,6 +1,11 @@
 # @version 0.1.0b17
+<<<<<<< HEAD
 # A "zap" to deposit/withdraw KaglaBase contract without too many transactions
 # (c) KaglaBase.Fi, 2020
+=======
+# A "zap" to deposit/withdraw Kagla contract without too many transactions
+
+>>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
 from vyper.interfaces import ERC20
 
 # External Contracts
@@ -27,7 +32,11 @@ contract USDT:
     def transferFrom(_from: address, _to: address, _value: uint256): modifying
 
 
+<<<<<<< HEAD
 contract KaglaBase:
+=======
+contract Kagla:
+>>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
     def add_liquidity(amounts: uint256[N_COINS], min_mint_amount: uint256): modifying
     def remove_liquidity(_amount: uint256, min_amounts: uint256[N_COINS]): modifying
     def remove_liquidity_imbalance(amounts: uint256[N_COINS], max_burn_amount: uint256): modifying
@@ -49,16 +58,27 @@ FEE_IMPRECISION: constant(uint256) = 25 * 10 ** 8  # % of the fee
 
 coins: public(address[N_COINS])
 underlying_coins: public(address[N_COINS])
+<<<<<<< HEAD
 KaglaBase: public(address)
+=======
+kagla: public(address)
+>>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
 token: public(address)
 
 
 @public
 def __init__(_coins: address[N_COINS], _underlying_coins: address[N_COINS],
+<<<<<<< HEAD
              _KaglaBase: address, _token: address):
     self.coins = _coins
     self.underlying_coins = _underlying_coins
     self.KaglaBase = _KaglaBase
+=======
+             _kagla: address, _token: address):
+    self.coins = _coins
+    self.underlying_coins = _underlying_coins
+    self.kagla = _kagla
+>>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
     self.token = _token
 
 
@@ -84,9 +104,15 @@ def add_liquidity(uamounts: uint256[N_COINS], min_mint_amount: uint256):
             ERC20(self.underlying_coins[i]).approve(self.coins[i], uamount)
             yERC20(self.coins[i]).deposit(uamount)
             amounts[i] = yERC20(self.coins[i]).balanceOf(self)
+<<<<<<< HEAD
             ERC20(self.coins[i]).approve(self.KaglaBase, amounts[i])
 
     KaglaBase(self.KaglaBase).add_liquidity(amounts, min_mint_amount)
+=======
+            ERC20(self.coins[i]).approve(self.kagla, amounts[i])
+
+    Kagla(self.kagla).add_liquidity(amounts, min_mint_amount)
+>>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
 
     tokens: uint256 = ERC20(self.token).balanceOf(self)
     assert_modifiable(ERC20(self.token).transfer(msg.sender, tokens))
@@ -120,7 +146,11 @@ def remove_liquidity(_amount: uint256, min_uamounts: uint256[N_COINS]):
     zeros: uint256[N_COINS] = ZEROS
 
     assert_modifiable(ERC20(self.token).transferFrom(msg.sender, self, _amount))
+<<<<<<< HEAD
     KaglaBase(self.KaglaBase).remove_liquidity(_amount, zeros)
+=======
+    Kagla(self.kagla).remove_liquidity(_amount, zeros)
+>>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
 
     self._send_all(msg.sender, min_uamounts, -1)
 
@@ -146,7 +176,11 @@ def remove_liquidity_imbalance(uamounts: uint256[N_COINS], max_burn_amount: uint
         _tokens = max_burn_amount
     assert_modifiable(ERC20(_token).transferFrom(msg.sender, self, _tokens))
 
+<<<<<<< HEAD
     KaglaBase(self.KaglaBase).remove_liquidity_imbalance(amounts, max_burn_amount)
+=======
+    Kagla(self.kagla).remove_liquidity_imbalance(amounts, max_burn_amount)
+>>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
 
     # Transfer unused tokens back
     _tokens = ERC20(_token).balanceOf(self)
@@ -244,9 +278,15 @@ def _calc_withdraw_one_coin(_token_amount: uint256, i: int128, rates: uint256[N_
     # First, need to calculate
     # * Get current D
     # * Solve Eqn against y_i for D - _token_amount
+<<<<<<< HEAD
     crv: address = self.KaglaBase
     A: uint256 = KaglaBase(crv).A()
     fee: uint256 = KaglaBase(crv).fee() * N_COINS / (4 * (N_COINS - 1))
+=======
+    crv: address = self.kagla
+    A: uint256 = Kagla(crv).A()
+    fee: uint256 = Kagla(crv).fee() * N_COINS / (4 * (N_COINS - 1))
+>>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
     fee += fee * FEE_IMPRECISION / FEE_DENOMINATOR  # Overcharge to account for imprecision
     precisions: uint256[N_COINS] = PRECISION_MUL
     total_supply: uint256 = ERC20(self.token).totalSupply()
@@ -254,7 +294,11 @@ def _calc_withdraw_one_coin(_token_amount: uint256, i: int128, rates: uint256[N_
     xp: uint256[N_COINS] = PRECISION_MUL
     S: uint256 = 0
     for j in range(N_COINS):
+<<<<<<< HEAD
         xp[j] *= KaglaBase(crv).balances(j)
+=======
+        xp[j] *= Kagla(crv).balances(j)
+>>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
         xp[j] = xp[j] * rates[j] / LENDING_PRECISION
         S += xp[j]
 
@@ -313,7 +357,11 @@ def remove_liquidity_one_coin(_token_amount: uint256, i: int128, min_uamount: ui
     amounts: uint256[N_COINS] = ZEROS
     amounts[i] = dy * LENDING_PRECISION / rates[i]
     token_amount_before: uint256 = ERC20(_token).balanceOf(self)
+<<<<<<< HEAD
     KaglaBase(self.KaglaBase).remove_liquidity_imbalance(amounts, _token_amount)
+=======
+    Kagla(self.kagla).remove_liquidity_imbalance(amounts, _token_amount)
+>>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
 
     # Unwrap and transfer all the coins we've got
     self._send_all(msg.sender, ZEROS, i)
@@ -330,7 +378,11 @@ def remove_liquidity_one_coin(_token_amount: uint256, i: int128, min_uamount: ui
 @public
 @nonreentrant('lock')
 def withdraw_donated_dust():
+<<<<<<< HEAD
     owner: address = KaglaBase(self.KaglaBase).owner()
+=======
+    owner: address = Kagla(self.kagla).owner()
+>>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
     assert msg.sender == owner
 
     _token: address = self.token

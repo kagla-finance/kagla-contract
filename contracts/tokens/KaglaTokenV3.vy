@@ -1,7 +1,11 @@
 # @version ^0.2.0
 """
+<<<<<<< HEAD:contracts/tokens/KaglaTokenV3.vy
 @title KaglaBase LP Token
 @author KaglaBase.Fi
+=======
+@title Kagla LP Token
+>>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca:contracts/tokens/CurveTokenV3.vy
 @notice Base implementation for an LP token provided for
         supplying liquidity to `StableSwap`
 @dev Follows the ERC-20 token standard as defined at
@@ -12,7 +16,11 @@ from vyper.interfaces import ERC20
 
 implements: ERC20
 
+<<<<<<< HEAD:contracts/tokens/KaglaTokenV3.vy
 interface KaglaBase:
+=======
+interface Kagla:
+>>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca:contracts/tokens/CurveTokenV3.vy
     def owner() -> address: view
 
 
@@ -187,6 +195,10 @@ def set_minter(_minter: address):
 
 @external
 def set_name(_name: String[64], _symbol: String[32]):
+<<<<<<< HEAD:contracts/tokens/KaglaTokenV3.vy
     assert KaglaBase(self.minter).owner() == msg.sender
+=======
+    assert Kagla(self.minter).owner() == msg.sender
+>>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca:contracts/tokens/CurveTokenV3.vy
     self.name = _name
     self.symbol = _symbol

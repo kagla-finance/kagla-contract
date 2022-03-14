@@ -1,8 +1,12 @@
 # @version 0.2.8
 """
+<<<<<<< HEAD
 @title KaglaBase saPool
 @author KaglaBase.Fi
 @license Copyright (c) KaglaBase.Fi, 2020 - all rights reserved
+=======
+@title Kagla saPool
+>>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
 @notice Pool implementation with aToken-style lending
 """
 

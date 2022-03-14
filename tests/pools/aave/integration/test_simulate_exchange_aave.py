@@ -1,7 +1,11 @@
 import pytest
 from brownie.test import given, strategy
 from hypothesis import settings
+<<<<<<< HEAD
 from simulation import KaglaBase
+=======
+from simulation import Kagla
+>>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
 
 # do not run this test on pools without lending or meta pools
 pytestmark = [pytest.mark.lending, pytest.mark.skip_pool_type("meta")]
@@ -57,7 +61,11 @@ def test_simulated_exchange(
         rate = 10 ** 18
         precision = 10 ** (18 - decimals)
         rates.append(rate * precision)
+<<<<<<< HEAD
     KaglaBase_model = KaglaBase(2 * 360, balances, n_coins, rates)
+=======
+    kagla_model = Kagla(2 * 360, balances, n_coins, rates)
+>>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
 
     for coin, decimals in zip(underlying_coins, wrapped_decimals):
         # Fund bob with $100 of each coin and approve swap contract
@@ -71,7 +79,11 @@ def test_simulated_exchange(
         # Increase aToken balances by 1% to simulate accrued interest
         for i, coin in enumerate(wrapped_coins):
             coin._mint_for_testing(swap, coin.balanceOf(swap) // 100, {"from": alice})
+<<<<<<< HEAD
             KaglaBase_model.x[i] = int(KaglaBase_model.x[i] * 1.01)
+=======
+            kagla_model.x[i] = int(kagla_model.x[i] * 1.01)
+>>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
 
         # Simulate the exchange
         old_virtual_price = swap.get_virtual_price()
@@ -95,7 +107,11 @@ def test_simulated_exchange(
         x_1 = underlying_coins[send].balanceOf(bob)
         y_1 = underlying_coins[recv].balanceOf(bob)
 
+<<<<<<< HEAD
         dy_m = KaglaBase_model.exchange(send, recv, value * max(rate_mul) // rate_mul[send])
+=======
+        dy_m = kagla_model.exchange(send, recv, value * max(rate_mul) // rate_mul[send])
+>>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
         dy_m = dy_m * rate_mul[recv] // max(rate_mul)
 
         assert x_0 - x_1 == value
@@ -108,5 +124,9 @@ def test_simulated_exchange(
     final_balances = [swap.balances(i) for i in range(n_coins)]
     final_total = sum(final_balances[i] * rates[i] / 1e18 for i in range(n_coins))
 
+<<<<<<< HEAD
     assert [round(a / b, 6) for a, b in zip(final_balances, KaglaBase_model.x)] == [1.0] * n_coins
+=======
+    assert [round(a / b, 6) for a, b in zip(final_balances, kagla_model.x)] == [1.0] * n_coins
+>>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
     assert final_total > n_coins * 100 * max(rate_mul)

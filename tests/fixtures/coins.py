@@ -142,7 +142,11 @@ def _underlying(alice, project, pool_data, is_forked, base_pool_token):
 def _pool_token(project, alice, pool_data):
     name = pool_data["name"]
     deployer = getattr(project, pool_data["lp_contract"])
+<<<<<<< HEAD
     args = [f"KaglaBase {name} LP Token", f"{name}CRV", 18, 0][: len(deployer.deploy.abi["inputs"])]
+=======
+    args = [f"Kagla {name} LP Token", f"{name}CRV", 18, 0][: len(deployer.deploy.abi["inputs"])]
+>>>>>>> 4cea20db2551dc87be08a49399752e380decd9ca
     return deployer.deploy(*args, {"from": alice})
 
 
