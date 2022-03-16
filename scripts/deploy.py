@@ -54,7 +54,7 @@ def main():
 
     # deploy the token
     token_args = pool_data["lp_constructor"]
-    ## TODO: all deployed tokens(including 3pool) are KaglaTokenV3.
+    # TODO: all deployed tokens(including 3pool) are KaglaTokenV3.
     token = token_deployer.deploy(token_args["name"], token_args["symbol"], _tx_params())
     # deploy the pool
     abi = next(i["inputs"] for i in swap_deployer.abi if i["type"] == "constructor")
@@ -88,7 +88,7 @@ def main():
             "_underlying_coins": underlying_coins,
             "_token": token,
             "_pool": swap,
-            "_curve": swap,
+            "_kagla": swap,
         }
         deployment_args = [args[i["name"]] for i in abi] + [_tx_params()]
 
