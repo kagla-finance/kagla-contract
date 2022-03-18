@@ -7,27 +7,27 @@
   "gauge_addresses": ["0xd662908ADA2Ea1916B3318327A97eB18aD588b5d"],
   "lp_constructor": {
     "symbol": "a3KGL",
-    "name": "Kagla.fi aDAI/aUSDC/aUSDT"
+    "name": "Kagla.fi lDAI/lUSDC/lUSDT"
   },
   "swap_constructor": {
     "_A": 200,
     "_fee": 4000000,
     "_admin_fee": 5000000000,
     "_offpeg_fee_multiplier": 20000000000,
-    "_aave_lending_pool": "0x7d2768dE32b0b80b7a3454c06BdAc94A69DDc7A9"
+    "_aave_lending_pool": "0x39aa77Aa50dDC4a1d77074891E761f5B73092c79"
   },
   "coins": [
     {
-      "name": "aDAI",
+      "name": "lDAI",
       "underlying_name": "DAI",
       "decimals": 18,
       "wrapped_decimals": 18,
       "tethered": false,
-      "underlying_address": "0x6b175474e89094c44da98b954eedeac495271d0f",
+      "underlying_address": "0x257f1a047948f73158DaDd03eB84b34498bCDc60",
       "wrapped_address": "0x028171bCA77440897B824Ca71D1c56caC55b68A3"
     },
     {
-      "name": "aUSDC",
+      "name": "lUSDC",
       "underlying_name": "USDC",
       "decimals": 6,
       "wrapped_decimals": 6,
@@ -36,11 +36,11 @@
       "wrapped_address": "0xBcca60bB61934080951369a648Fb03DF4F96263C"
     },
     {
-      "name": "aUSDT",
+      "name": "lUSDT",
       "underlying_name": "USDT",
       "decimals": 6,
       "wrapped_decimals": 6,
-      "tethered": true,
+      "tethered": false,
       "underlying_address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
       "wrapped_address": "0x3Ed3B47Dd13EC9a98b44e6204A523E766B225811"
     }
