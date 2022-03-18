@@ -24,10 +24,7 @@ MINTER = "0xE177574f0452B1695e246DA701341EBC17f760a1"
 
 
 def _tx_params():
-    return {
-        "from": DEPLOYER,
-        "required_confs": REQUIRED_CONFIRMATIONS
-    }
+    return {"from": DEPLOYER, "required_confs": REQUIRED_CONFIRMATIONS}
 
 
 def main():
