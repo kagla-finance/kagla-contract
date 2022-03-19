@@ -1,50 +1,32 @@
 {
-  "lp_contract": "KaglaTokenV1",
-  "wrapped_contract": "yERC20",
-  "swap_address": "0x79a8C46DeA5aDa233ABaFFD40F3A0A2B1e5A4F27",
-  "lp_token_address": "0x3B3Ac5386837Dc563660FB6a0937DFAa5924333B",
-  "zap_address": "0xb6c057591e073249f2d9d88ba59a46cfc9b59edb",
-  "gauge_addresses": ["0x69Fb7c45726cfE2baDeE8317005d3F94bE838840"],
+  "base_pool": "3pool",
+  "pool_types": ["meta"],
+  "swap_address": "0x8038C01A0390a8c547446a0b2c18fc9aEFEcc10c",
+  "lp_token_address": "0x3a664Ab939FD8482048609f652f9a0B0677337B9",
+  "zap_address": "0x61E10659fe3aa93d036d099405224E4Ac24996d0",
+  "gauge_addresses": ["0xAEA6c312f4b3E04D752946d329693F7293bC2e6D"],
+  "lp_contract": "KaglaTokenV3",
   "lp_constructor": {
-    "name": "Kagla.fi yDAI/yUSDC/yUSDT/yBUSD",
-    "symbol": "yDAI+yUSDC+yUSDT+yBUSD"
+    "symbol": "busd3KGL",
+    "name": "Kagla.fi BUSD/3Kgl"
+  },
+  "swap_constructor": {
+    "_A": 200,
+    "_fee": 4000000,
+    "_admin_fee": 0
   },
   "coins": [
     {
-      "name": "yDAI",
-      "underlying_name": "DAI",
+      "name": "BUSD",
       "decimals": 18,
       "tethered": false,
-      "wrapped_decimals": 18,
-      "underlying_address": "0x6b175474e89094c44da98b954eedeac495271d0f",
-      "wrapped_address": "0xc2cb1040220768554cf699b0d863a3cd4324ce32"
+      "underlying_address": "0xDA820e20A89928e43794645B9A9770057D65738B"
     },
     {
-      "name": "yUSDC",
-      "underlying_name": "USDC",
-      "decimals": 6,
-      "tethered": false,
-      "wrapped_decimals": 6,
-      "underlying_address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
-      "wrapped_address": "0x26ea744e5b887e5205727f55dfbe8685e3b21951"
-    },
-    {
-      "name": "yUSDT",
-      "underlying_name": "USDT",
-      "decimals": 6,
-      "tethered": true,
-      "wrapped_decimals": 6,
-      "underlying_address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
-      "wrapped_address": "0xe6354ed5bc4b393a5aad09f21c46e101e692d447"
-    },
-    {
-      "name": "yBUSD",
-      "underlying_name": "BUSD",
+      "name": "3KGL",
       "decimals": 18,
-      "tethered": false,
-      "wrapped_decimals": 18,
-      "underlying_address": "0x4fabb145d64652a948d72533023f6e7a623c7c53",
-      "wrapped_address": "0x04bc0ab673d88ae9dbc9da2380cb6b79c4bca9ae"
+      "base_pool_token": true,
+      "underlying_address": "0x60ede93e970148b719501b6d8b96Ae87f26108E5"
     }
   ]
 }
