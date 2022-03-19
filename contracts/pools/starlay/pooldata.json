@@ -2,9 +2,9 @@
   "lp_contract": "KaglaTokenV3",
   "pool_types": ["arate"],
   "wrapped_contract": "ATokenMock",
-  "swap_address": "0xDeBF20617708857ebe4F679508E7b7863a8A8EeE",
-  "lp_token_address": "0xFd2a8fA60Abd58Efe3EeE34dd494cD491dC14900",
-  "gauge_addresses": ["0xd662908ADA2Ea1916B3318327A97eB18aD588b5d"],
+  "swap_address": "0xAdA48a0F05bc8e852A3577d7fCa25C8E97075a08",
+  "lp_token_address": "0x626CD15023bFE79e44E3721Fe53361B924EC0373",
+  "gauge_addresses": ["0x01826dE23E80200595D2dE01B8c17a8e76BaB2df"],
   "lp_constructor": {
     "symbol": "a3KGL",
     "name": "Kagla.fi lDAI/lUSDC/lUSDT"
@@ -14,7 +14,7 @@
     "_fee": 4000000,
     "_admin_fee": 5000000000,
     "_offpeg_fee_multiplier": 20000000000,
-    "_aave_lending_pool": "0x39aa77Aa50dDC4a1d77074891E761f5B73092c79"
+    "_aave_lending_pool": "0x8022327a333eAeFaD46A723CDcA1aeFdA12afA53"
   },
   "coins": [
     {
@@ -24,7 +24,7 @@
       "wrapped_decimals": 18,
       "tethered": false,
       "underlying_address": "0x257f1a047948f73158DaDd03eB84b34498bCDc60",
-      "wrapped_address": "0x028171bCA77440897B824Ca71D1c56caC55b68A3"
+      "wrapped_address": "0x59448269aa5Cb875F27268368bB1913bF60580aD"
     },
     {
       "name": "lUSDC",
@@ -32,8 +32,8 @@
       "decimals": 6,
       "wrapped_decimals": 6,
       "tethered": false,
-      "underlying_address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
-      "wrapped_address": "0xBcca60bB61934080951369a648Fb03DF4F96263C"
+      "underlying_address": "0x458db3bEf6ffC5212f9359bbDAeD0D5A58129397",
+      "wrapped_address": "0xF4D80e698D40Aae4F8486E59D3A52BB4b637e867"
     },
     {
       "name": "lUSDT",
@@ -41,8 +41,8 @@
       "decimals": 6,
       "wrapped_decimals": 6,
       "tethered": false,
-      "underlying_address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
-      "wrapped_address": "0x3Ed3B47Dd13EC9a98b44e6204A523E766B225811"
+      "underlying_address": "0xdB25FDCCe3E63B376D308dC2D46234632d9959d8",
+      "wrapped_address": "0xFa668E06fe382ECb6ADBad15108357c1125aF906"
     }
   ]
 }

@@ -1,6 +1,6 @@
 # kagla-contract/contracts/pools/busd
 
-[Kagla BUSD pool](https://www.kagla.finance/busd), with lending on [yearn.finance](https://yearn.finance/).
+[Kagla BUSD metapool](https://www.kagla.finance/busd), allowing swaps via the Kagla [tri-pool](../3pool).
 
 ## Contracts
 
@@ -9,25 +9,26 @@
 
 ## Deployments
 
-* [`KaglaContractV1`](../../tokens/KaglaTokenV1.vy): [0x3B3Ac5386837Dc563660FB6a0937DFAa5924333B](https://etherscan.io/address/0x3B3Ac5386837Dc563660FB6a0937DFAa5924333B)
-* [`DepositBUSD`](DepositBUSD.vy): [0xb6c057591e073249f2d9d88ba59a46cfc9b59edb](https://etherscan.io/address/0xb6c057591e073249f2d9d88ba59a46cfc9b59edb)
-* [`LiquidityGauge`](../../gauges/LiquidityGauge.vy): [0x69Fb7c45726cfE2baDeE8317005d3F94bE838840](https://etherscan.io/address/0x69fb7c45726cfe2badee8317005d3f94be838840)
-* [`StableSwapBUSD`](StableSwapBUSD.vy): [0x79a8C46DeA5aDa233ABaFFD40F3A0A2B1e5A4F27](https://etherscan.io/address/0x79a8C46DeA5aDa233ABaFFD40F3A0A2B1e5A4F27)
+* [`KaglaContractV3`](../../tokens/KaglaTokenV3.vy): [TBD](https://etherscan.io/address/TBD)
+* [`DepositBUSD`](DepositBUSD.vy): [TBD](https://etherscan.io/address/TBD)
+* [`LiquidityGaugeReward`](../../gauges/LiquidityGaugeReward.vy): [TBD](https://etherscan.io/address/TBD)
+* [`StableSwapBUSD`](StableSwapBUSD.vy): [TBD](https://etherscan.io/address/TBD)
 
 ## Stablecoins
 
-Kagla BUSD pool supports swaps between the following stablecoins:
+Kagla BUSD metapool utilizes the supports swaps between the following assets:
 
-### Wrapped
+## Direct swaps
 
-* `yDAI`: [0xc2cb1040220768554cf699b0d863a3cd4324ce32](https://etherscan.io/address/0xc2cb1040220768554cf699b0d863a3cd4324ce32)
-* `yUSDC`: [0x26ea744e5b887e5205727f55dfbe8685e3b21951](https://etherscan.io/address/0x26ea744e5b887e5205727f55dfbe8685e3b21951)
-* `yUSDT`: [0xe6354ed5bc4b393a5aad09f21c46e101e692d447](https://etherscan.io/address/0xe6354ed5bc4b393a5aad09f21c46e101e692d447)
-* `yBUSD`: [0x04bc0ab673d88ae9dbc9da2380cb6b79c4bca9ae](https://etherscan.io/address/0x04bc0ab673d88ae9dbc9da2380cb6b79c4bca9ae)
+Direct swaps are possible between BUSD and the Kagla tri-pool LP token.
 
-### Underlying
+* `BUSD`: [TBD](https://etherscan.io/address/TBD)
+* `3CRV`: [TBD](https://etherscan.io/address/TBD)
 
-* `DAI`: [0x6b175474e89094c44da98b954eedeac495271d0f](https://etherscan.io/token/0x6b175474e89094c44da98b954eedeac495271d0f)
-* `USDC`: [0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48](https://etherscan.io/token/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48)
-* `USDT`: [0xdac17f958d2ee523a2206206994597c13d831ec7](https://etherscan.io/address/0xdac17f958d2ee523a2206206994597c13d831ec7)
-* `BUSD`: [0x4fabb145d64652a948d72533023f6e7a623c7c53](https://etherscan.io/address/0x4fabb145d64652a948d72533023f6e7a623c7c53)
+## Base Pool coins
+
+The tri-pool LP token may be wrapped or unwrapped to provide swaps between BUSD and the following stablecoins:
+
+* `DAI`: [TBD](https://etherscan.io/address/TBD)
+* `USDC`: [TBD](https://etherscan.io/address/TBD)
+* `USDT`: [TBD](https://etherscan.io/address/TBD)

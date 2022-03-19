@@ -50,7 +50,7 @@ def test_remove_liquidity_imbalance(alice, swap, initial_amounts, n_coins):
         swap.remove_liquidity_imbalance([0] * n_coins, 0, {"from": alice})
 
 
-@pytest.mark.skip_pool("busd", "compound", "pax", "susd", "usdt", "y")
+@pytest.mark.skip_pool("compound", "pax", "susd", "usdt", "y")
 def test_remove_liquidity_one_coin(alice, swap):
     swap.kill_me({"from": alice})
 

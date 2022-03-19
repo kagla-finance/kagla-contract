@@ -11,7 +11,7 @@ REQUIRED_CONFIRMATIONS = 1
 
 # deployment settings
 # most settings are taken from `contracts/pools/{POOL_NAME}/pooldata.json`
-POOL_NAME = "3pool"
+POOL_NAME = "busd"
 
 # temporary owner address
 POOL_OWNER = "0x50414Ac6431279824df9968855181474c919a94B"
@@ -64,14 +64,16 @@ def main():
         _owner=POOL_OWNER,
     )
     deployment_args = [args[i["name"]] for i in abi] + [_tx_params()]
-
+    print(deployment_args)
+    print(*deployment_args)
     swap = swap_deployer.deploy(*deployment_args)
 
     # set the minter
     token.set_minter(swap, _tx_params())
+    print(token.symbol())
 
     # deploy the liquidity gauge
-    LiquidityGaugeV3 = load_project("kagla-finance/kagla-dao-contracts@0.0.3").LiquidityGaugeV3
+    LiquidityGaugeV3 = load_project("kagla-finance/kagla-dao-contracts@0.0.6").LiquidityGaugeV3
     LiquidityGaugeV3.deploy(token, MINTER, GAUGE_OWNER, _tx_params())
 
     # deploy the zap
