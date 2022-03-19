@@ -39,7 +39,7 @@ def test_number_go_up(bob, swap, initial_amounts, wrapped_coins, n_coins):
 
 
 @pytest.mark.itercoins("idx")
-@pytest.mark.skip_pool("busd", "compound", "pax", "ren", "sbtc", "susd", "usdt", "y")
+@pytest.mark.skip_pool("compound", "pax", "ren", "sbtc", "susd", "usdt", "y")
 def test_remove_one_coin(alice, swap, pool_token, idx):
     amount = pool_token.balanceOf(alice) // 10
 

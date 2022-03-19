@@ -5,7 +5,7 @@ import pytest
 
 pytestmark = [
     pytest.mark.usefixtures("add_initial_liquidity", "approve_zap"),
-    pytest.mark.skip_pool("busd", "compound", "pax", "susd", "usdt", "y"),
+    pytest.mark.skip_pool("compound", "pax", "susd", "usdt", "y"),
 ]
 
 
