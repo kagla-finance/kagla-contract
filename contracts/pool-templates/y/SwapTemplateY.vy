@@ -302,6 +302,8 @@ def get_virtual_price() -> uint256:
     # D is in the units similar to DAI (e.g. converted to precision 1e18)
     # When balanced, D = n * x_u - total virtual value of the portfolio
     token_supply: uint256 = ERC20(self.lp_token).totalSupply()
+    if token_supply == 0:
+        return 0
     return D * PRECISION / token_supply
 
 
