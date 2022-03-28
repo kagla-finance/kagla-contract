@@ -2,10 +2,10 @@
   "base_pool": "3pool",
   "pool_types": ["meta"],
   "lp_contract": "KaglaTokenV3",
-  "swap_address": "0xCd7Be03F6D46427bce5b00c7c20B559D9b989F66",
-  "lp_token_address": "0xbb9AeE58ea4C5cDD645FeCf9949C8C66dB594681",
-  "zap_address": "0x1C63427d55848FD265ABae39b8b1eD20f953e645",
-  "gauge_addresses": ["0x9609d24D6fB0d135Ccee954e7A4a263992885b10"],
+  "swap_address": "0x1487122d017fEcD7d82e9D45e634A27EbE031a9b",
+  "lp_token_address": "0xAb57C8fDE70cb9cCe36CcEE9F92C5c069b198B97",
+  "zap_address": "0xD098802A11F7E48337B97AE0a3c2529e3118A8d6",
+  "gauge_addresses": ["0x8F11A4e17b076703Ed42972273cbD999c14F464a"],
   "lp_constructor": {
     "symbol": "busd3KGL",
     "name": "Kagla.fi BUSD/3Kgl"
