@@ -2,9 +2,9 @@
   "lp_contract": "KaglaTokenV3",
   "pool_types": ["arate"],
   "wrapped_contract": "ATokenMock",
-  "swap_address": "0x24EAdA006924e9A9A8bfa4D572e5Ed39be9e089e",
-  "lp_token_address": "0xd87f5783C6913f8354E5062B26ED9657385Fe854",
-  "gauge_addresses": ["0x6cCF69a6b007e8B1605A8D29Bcf600Edb9334d49"],
+  "swap_address": "0xe144E1849e1C005D188f9fA11d4A484D29547F39",
+  "lp_token_address": "0x3328E82bB102809e91A072851a5BcBa86215E5E4",
+  "gauge_addresses": ["0xd5e4DEcE9fC2328f0658717682A9b703b496F073"],
   "lp_constructor": {
     "symbol": "a3KGL",
     "name": "Kagla.fi lDAI/lUSDC/lUSDT"
