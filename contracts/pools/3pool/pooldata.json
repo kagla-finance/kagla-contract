@@ -10,8 +10,7 @@
   "swap_constructor": {
     "_A": 2000,
     "_fee": 4000000,
-    "_admin_fee": 5000000000,
-    "_offpeg_multiplier": 20000000000
+    "_admin_fee": 5000000000
   },
   "coins": [
     {
