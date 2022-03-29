@@ -11,9 +11,9 @@
     "name": "Kagla.fi BUSD/3Kgl"
   },
   "swap_constructor": {
-    "_A": 200,
+    "_A": 500,
     "_fee": 4000000,
-    "_admin_fee": 0
+    "_admin_fee": 5000000000
   },
   "coins": [
     {

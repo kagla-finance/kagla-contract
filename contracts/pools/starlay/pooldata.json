@@ -10,7 +10,7 @@
     "name": "Kagla.fi lDAI/lUSDC/lUSDT"
   },
   "swap_constructor": {
-    "_A": 200,
+    "_A": 2000,
     "_fee": 4000000,
     "_admin_fee": 5000000000,
     "_offpeg_fee_multiplier": 20000000000,
