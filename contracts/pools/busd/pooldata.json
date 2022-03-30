@@ -7,13 +7,13 @@
   "zap_address": "0xEABc7b69E44B02C3B1d9b6291AF7D0df4123Eec1",
   "gauge_addresses": ["0xcBeD93bB370376e4EA7D08d3d4FDEdDc5A84b1ed"],
   "lp_constructor": {
-    "symbol": "busd3KGL",
+    "symbol": "BUSD3KGL",
     "name": "Kagla.fi BUSD/3Kgl"
   },
   "swap_constructor": {
-    "_A": 200,
+    "_A": 500,
     "_fee": 4000000,
-    "_admin_fee": 0
+    "_admin_fee": 5000000000
   },
   "coins": [
     {

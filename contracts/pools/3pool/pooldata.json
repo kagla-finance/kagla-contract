@@ -5,13 +5,12 @@
   "gauge_addresses": ["0xe616CD383Af18aEde6024e9BFB54B9Cd1D7aC385"],
   "lp_constructor": {
     "name": "Kagla.fi DAI/USDC/USDT",
-    "symbol": "3Kgl"
+    "symbol": "3KGL"
   },
   "swap_constructor": {
-    "_A": 200,
+    "_A": 2000,
     "_fee": 4000000,
-    "_admin_fee": 5000000000,
-    "_offpeg_fee_multiplier": 20000000000
+    "_admin_fee": 5000000000
   },
   "coins": [
     {
