@@ -7,7 +7,7 @@
   "zap_address": "0xEABc7b69E44B02C3B1d9b6291AF7D0df4123Eec1",
   "gauge_addresses": ["0xcBeD93bB370376e4EA7D08d3d4FDEdDc5A84b1ed"],
   "lp_constructor": {
-    "symbol": "busd3KGL",
+    "symbol": "BUSD3KGL",
     "name": "Kagla.fi BUSD/3Kgl"
   },
   "swap_constructor": {
