@@ -2,9 +2,9 @@
   "lp_contract": "KaglaTokenV3",
   "pool_types": ["arate"],
   "wrapped_contract": "ATokenMock",
-  "swap_address": "0xe144E1849e1C005D188f9fA11d4A484D29547F39",
-  "lp_token_address": "0x3328E82bB102809e91A072851a5BcBa86215E5E4",
-  "gauge_addresses": ["0xd5e4DEcE9fC2328f0658717682A9b703b496F073"],
+  "swap_address": "0x56Bbb17329f4943C2455D449B19A1599055E492c",
+  "lp_token_address": "0x424eeA39b80591629318A1c152c6D6740DaeFcA1",
+  "gauge_addresses": ["0xceE9432d4afC278f67D9Ba2340481fe1b7770E75"],
   "lp_constructor": {
     "symbol": "l3KGL",
     "name": "Kagla.fi lDAI/lUSDC/lUSDT"
@@ -23,8 +23,8 @@
       "decimals": 18,
       "wrapped_decimals": 18,
       "tethered": false,
-      "underlying_address": "0x257f1a047948f73158DaDd03eB84b34498bCDc60",
-      "wrapped_address": "0x59448269aa5Cb875F27268368bB1913bF60580aD"
+      "underlying_address": "0x6De33698e9e9b787e09d3Bd7771ef63557E148bb",
+      "wrapped_address": "0x4dd9c468A44F3FEF662c35c1E9a6108B70415C2c"
     },
     {
       "name": "lUSDC",
@@ -32,8 +32,8 @@
       "decimals": 6,
       "wrapped_decimals": 6,
       "tethered": false,
-      "underlying_address": "0x458db3bEf6ffC5212f9359bbDAeD0D5A58129397",
-      "wrapped_address": "0xF4D80e698D40Aae4F8486E59D3A52BB4b637e867"
+      "underlying_address": "0x6a2d262D56735DbA19Dd70682B39F6bE9a931D98",
+      "wrapped_address": "0xC404E12D3466acCB625c67dbAb2E1a8a457DEf3c"
     },
     {
       "name": "lUSDT",
@@ -41,8 +41,8 @@
       "decimals": 6,
       "wrapped_decimals": 6,
       "tethered": false,
-      "underlying_address": "0xdB25FDCCe3E63B376D308dC2D46234632d9959d8",
-      "wrapped_address": "0xFa668E06fe382ECb6ADBad15108357c1125aF906"
+      "underlying_address": "0x3795C36e7D12A8c252A20C5a7B455f7c57b60283",
+      "wrapped_address": "0x430D50963d9635bBef5a2fF27BD0bDDc26ed691F"
     }
   ]
 }
