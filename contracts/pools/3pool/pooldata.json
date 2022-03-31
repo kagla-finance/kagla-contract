@@ -1,8 +1,8 @@
 {
   "lp_contract": "KaglaTokenV3",
-  "swap_address": "0xb5D024C8C3f2fE315910644Bd089ac1E74955171",
-  "lp_token_address": "0x2dCAEF9671281333dFaEE1fcaB1cAdD17B86fEfc",
-  "gauge_addresses": ["0x4d48eAEc0769624ecC22aa21326E66DC63047714"],
+  "swap_address": "0xeB97BC7C4ca99Fa8078fF879905338517821B9F5",
+  "lp_token_address": "0x18BDb86E835E9952cFaA844EB923E470E832Ad58",
+  "gauge_addresses": ["0xa480B71b5aFBe28df9658C253e1E18A5EeDA131E"],
   "lp_constructor": {
     "name": "Kagla.fi DAI/USDC/USDT",
     "symbol": "3KGL"
