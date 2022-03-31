@@ -4,7 +4,9 @@ from brownie import accounts
 from brownie.network.gas.strategies import GasNowScalingStrategy
 from brownie.project import load as load_project
 from brownie.project.main import get_loaded_projects
-
+from brownie import (
+    StableSwap3Pool,
+)
 # set a throwaway admin account here
 DEPLOYER = accounts.load("kagla-deploy")
 REQUIRED_CONFIRMATIONS = 1
@@ -17,7 +19,7 @@ POOL_NAME = "busd"
 POOL_OWNER = "0x50414Ac6431279824df9968855181474c919a94B"
 GAUGE_OWNER = "0x50414Ac6431279824df9968855181474c919a94B"
 
-MINTER = "0xE177574f0452B1695e246DA701341EBC17f760a1"
+MINTER = "0x8C52A8D0b165f9aa3d29B8081A6Cd2C795786788"
 
 # POOL_OWNER = "0xeCb456EA5365865EbAb8a2661B0c503410e9B347"  # PoolProxy
 # GAUGE_OWNER = "0x519AFB566c05E00cfB9af73496D00217A630e4D5"  # GaugeProxy
@@ -64,16 +66,13 @@ def main():
         _owner=POOL_OWNER,
     )
     deployment_args = [args[i["name"]] for i in abi] + [_tx_params()]
-    print(deployment_args)
-    print(*deployment_args)
     swap = swap_deployer.deploy(*deployment_args)
 
     # set the minter
     token.set_minter(swap, _tx_params())
-    print(token.symbol())
 
     # deploy the liquidity gauge
-    LiquidityGaugeV3 = load_project("kagla-finance/kagla-dao-contracts@0.0.6").LiquidityGaugeV3
+    LiquidityGaugeV3 = load_project("kagla-finance/kagla-dao-contracts@0.0.7").LiquidityGaugeV3
     LiquidityGaugeV3.deploy(token, MINTER, GAUGE_OWNER, _tx_params())
 
     # deploy the zap

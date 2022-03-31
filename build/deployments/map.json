@@ -1,4 +1,23 @@
 {
+  "2206": {
+    "DepositBUSD": [
+      "0xB149f3873af572452392F16e30871F6B658cC2c7"
+    ],
+    "KaglaTokenV3": [
+      "0x3DC9633D3Ce3EDA31eF131b77a9Ff1426037f366",
+      "0x424eeA39b80591629318A1c152c6D6740DaeFcA1",
+      "0xB5a443b1d191b9b9525565014Cc82c4dcfaD13F4"
+    ],
+    "StableSwap3Pool": [
+      "0x8b3eA3B6bf56E4FA6BC81034F737b67EE85cB3bb"
+    ],
+    "StableSwapBUSD": [
+      "0x553215F108a5A2F46B6FF3e64Dc395bb9c5D5D3F"
+    ],
+    "StableSwapStarlay": [
+      "0x56Bbb17329f4943C2455D449B19A1599055E492c"
+    ]
+  },
   "336": {
     "DepositBUSD": [
       "0xEABc7b69E44B02C3B1d9b6291AF7D0df4123Eec1",

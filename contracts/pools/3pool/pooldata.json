@@ -1,8 +1,8 @@
 {
   "lp_contract": "KaglaTokenV3",
-  "swap_address": "0x8DEEF31ca7fE831527E46D4C736B147628564f7C",
-  "lp_token_address": "0x99799cAB58C5591ee10015F12173C1104eB23225",
-  "gauge_addresses": ["0xe616CD383Af18aEde6024e9BFB54B9Cd1D7aC385"],
+  "swap_address": "0x8b3eA3B6bf56E4FA6BC81034F737b67EE85cB3bb",
+  "lp_token_address": "0xB5a443b1d191b9b9525565014Cc82c4dcfaD13F4",
+  "gauge_addresses": ["0xDbd39f12569F79aaFfEDceE412a5A7e88C413381"],
   "lp_constructor": {
     "name": "Kagla.fi DAI/USDC/USDT",
     "symbol": "3KGL"
@@ -17,19 +17,19 @@
       "name": "DAI",
       "decimals": 18,
       "tethered": false,
-      "underlying_address": "0x257f1a047948f73158DaDd03eB84b34498bCDc60"
+      "underlying_address": "0x6De33698e9e9b787e09d3Bd7771ef63557E148bb"
     },
     {
       "name": "USDC",
       "decimals": 6,
       "tethered": false,
-      "underlying_address": "0x458db3bEf6ffC5212f9359bbDAeD0D5A58129397"
+      "underlying_address": "0x6a2d262D56735DbA19Dd70682B39F6bE9a931D98"
     },
     {
       "name": "USDT",
       "decimals": 6,
       "tethered": false,
-      "underlying_address": "0xdB25FDCCe3E63B376D308dC2D46234632d9959d8"
+      "underlying_address": "0x3795C36e7D12A8c252A20C5a7B455f7c57b60283"
     }
   ]
 }
