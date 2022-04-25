@@ -2,9 +2,9 @@
   "lp_contract": "KaglaTokenV3",
   "pool_types": ["arate"],
   "wrapped_contract": "ATokenMock",
-  "swap_address": "0xED29Ca5c39E35793F63f4485873ABBB52Cb29308",
-  "lp_token_address": "0x60811F3d54e860cDf01D72ED422a700e9cf010a9",
-  "gauge_addresses": ["0x13EE6d778B41229a8dF6a2c6EB2dcf595faFc2f4"],
+  "swap_address": "0x14E8B25f260901414799A8a8662A90608Bf1fD62",
+  "lp_token_address": "0x87462F960508d2F2ca1a2c516a77374ee59dBCbB",
+  "gauge_addresses": ["0xc020e5D53Af59b0Fd22970f9851AcB1a12A317c6"],
   "lp_constructor": {
     "symbol": "l3KGL",
     "name": "Kagla.fi lDAI/lUSDC/lUSDT"
@@ -14,7 +14,7 @@
     "_fee": 4000000,
     "_admin_fee": 5000000000,
     "_offpeg_fee_multiplier": 20000000000,
-    "_aave_lending_pool": "0x90384334333f3356eFDD5b20016350843b90f182"
+    "_aave_lending_pool": "0x8022327a333eAeFaD46A723CDcA1aeFdA12afA53"
   },
   "coins": [
     {
@@ -23,8 +23,8 @@
       "decimals": 18,
       "wrapped_decimals": 18,
       "tethered": false,
-      "underlying_address": "0x6De33698e9e9b787e09d3Bd7771ef63557E148bb",
-      "wrapped_address": "0x4dd9c468A44F3FEF662c35c1E9a6108B70415C2c"
+      "underlying_address": "0x257f1a047948f73158DaDd03eB84b34498bCDc60",
+      "wrapped_address": "0x59448269aa5Cb875F27268368bB1913bF60580aD"
     },
     {
       "name": "lUSDC",
@@ -32,8 +32,8 @@
       "decimals": 6,
       "wrapped_decimals": 6,
       "tethered": false,
-      "underlying_address": "0x6a2d262D56735DbA19Dd70682B39F6bE9a931D98",
-      "wrapped_address": "0xC404E12D3466acCB625c67dbAb2E1a8a457DEf3c"
+      "underlying_address": "0x458db3bEf6ffC5212f9359bbDAeD0D5A58129397",
+      "wrapped_address": "0xF4D80e698D40Aae4F8486E59D3A52BB4b637e867"
     },
     {
       "name": "lUSDT",
@@ -41,8 +41,8 @@
       "decimals": 6,
       "wrapped_decimals": 6,
       "tethered": false,
-      "underlying_address": "0x3795C36e7D12A8c252A20C5a7B455f7c57b60283",
-      "wrapped_address": "0x430D50963d9635bBef5a2fF27BD0bDDc26ed691F"
+      "underlying_address": "0xdB25FDCCe3E63B376D308dC2D46234632d9959d8",
+      "wrapped_address": "0xFa668E06fe382ECb6ADBad15108357c1125aF906"
     }
   ]
 }
