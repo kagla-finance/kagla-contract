@@ -2,10 +2,10 @@
   "base_pool": "3pool",
   "pool_types": ["meta"],
   "lp_contract": "KaglaTokenV3",
-  "swap_address": "0xd4CB599BD69339d020108481FA68Aec64D6D2D74",
-  "lp_token_address": "0x8355B9670ca7Eb6278136DE1779d68cB78dfC6b2",
-  "zap_address": "0xEA3f71E306D44B864FBEd2d9ee4E0303FA9049D8",
-  "gauge_addresses": ["0x02871ff0b539E04A952e1d6cB4ae2f6eBCE7f3eD"],
+  "swap_address": "0x4ECFc5310fD2D9A96E713E752DC1aDEBa5857D0f",
+  "lp_token_address": "0xfEbC28574b0982Baea32C2558525267bb7273F12",
+  "zap_address": "0xEe4665C343B06503dcd4c0042A0e29Ec3d607132",
+  "gauge_addresses": ["0x9D2070D930005553D2994A202BB17C80053A4e00"],
   "lp_constructor": {
     "symbol": "BAI3KGL",
     "name": "Kagla.fi BAI/3Kgl"
