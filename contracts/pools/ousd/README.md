@@ -1,6 +1,6 @@
 # kagla-contract/contracts/pools/ousd
 
-[Kagla BAI metapool](https://www.kagla.finance/ousd), allowing swaps via the Kagla [tri-pool](../3pool).
+[Kagla oUSD metapool](https://www.kagla.finance/ousd), allowing swaps via the Kagla [tri-pool](../3pool).
 
 ## Contracts
 
@@ -16,18 +16,18 @@
 
 ## Stablecoins
 
-Kagla BAI metapool utilizes the supports swaps between the following assets:
+Kagla oUSD metapool utilizes the supports swaps between the following assets:
 
 ## Direct swaps
 
-Direct swaps are possible between BAI and the Kagla tri-pool LP token.
+Direct swaps are possible between oUSD and the Kagla tri-pool LP token.
 
-* `BAI`: [TBD](https://etherscan.io/address/TBD)
+* `oUSD`: [TBD](https://etherscan.io/address/TBD)
 * `3CRV`: [TBD](https://etherscan.io/address/TBD)
 
 ## Base Pool coins
 
-The tri-pool LP token may be wrapped or unwrapped to provide swaps between BAI and the following stablecoins:
+The tri-pool LP token may be wrapped or unwrapped to provide swaps between oUSD and the following stablecoins:
 
 * `DAI`: [TBD](https://etherscan.io/address/TBD)
 * `USDC`: [TBD](https://etherscan.io/address/TBD)
