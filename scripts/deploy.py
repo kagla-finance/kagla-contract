@@ -15,7 +15,7 @@ REQUIRED_CONFIRMATIONS = 1
 
 # deployment settings
 # most settings are taken from `contracts/pools/{POOL_NAME}/pooldata.json`
-POOL_NAME = "busd"
+POOL_NAME = "ousd"
 
 # temporary owner address
 POOL_OWNER = "0x50414Ac6431279824df9968855181474c919a94B"
