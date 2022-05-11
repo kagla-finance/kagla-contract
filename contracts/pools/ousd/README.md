@@ -10,7 +10,7 @@
 ## Deployments
 
 * [`KaglaContractV3`](../../tokens/KaglaTokenV3.vy): [TBD](https://etherscan.io/address/TBD)
-* [`DepositOUSD`](DepositBAI.vy): [TBD](https://etherscan.io/address/TBD)
+* [`DepositOUSD`](DepositoUSD.vy): [TBD](https://etherscan.io/address/TBD)
 * [`LiquidityGaugeReward`](../../gauges/LiquidityGaugeReward.vy): [TBD](https://etherscan.io/address/TBD)
 * [`StableSwapOUSD`](StableSwapOUSD.vy): [TBD](https://etherscan.io/address/TBD)
 
