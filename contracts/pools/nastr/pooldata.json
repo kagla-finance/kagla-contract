@@ -12,6 +12,11 @@
       "decimals": 18,
       "tethered": false,
       "wrapped": false
+    },
+    {
+      "decimals": 18,
+      "tethered": false,
+      "wrapped": false
     }
   ],
   "testing": {
