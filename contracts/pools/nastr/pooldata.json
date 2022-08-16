@@ -22,7 +22,7 @@
       "decimals": 18,
       "wrapped_decimals": 18,
       "tethered": false,
-      "underlying_address": "0x44a26AE046a01d99eBAbecc24B4d61B388656871"
+      "underlying_address": "0xe511ed88575c57767bafb72bfd10775413e3f2b0"
     }
   ],
   "testing": {
