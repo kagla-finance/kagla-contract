@@ -1,22 +1,28 @@
 {
   "lp_contract": "KaglaTokenV3",
   "pool_types": ["eth"],
+  "lp_constructor": {
+    "name": "Kagla.fi nASTR/ASTR",
+    "symbol": "2AKGL"
+  },
+  "swap_constructor": {
+    "_A": 500,
+    "_fee": 4000000,
+    "_admin_fee": 5000000000
+  },
   "coins": [
     {
+      "name": "ASTR",
       "decimals": 18,
       "tethered": false,
-      "wrapped": false,
       "underlying_address": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE"
     },
     {
+      "name": "nASTR",
       "decimals": 18,
+      "wrapped_decimals": 18,
       "tethered": false,
-      "wrapped": false
-    },
-    {
-      "decimals": 18,
-      "tethered": false,
-      "wrapped": false
+      "underlying_address": "0x44a26AE046a01d99eBAbecc24B4d61B388656871"
     }
   ],
   "testing": {
