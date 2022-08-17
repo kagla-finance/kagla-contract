@@ -3,6 +3,7 @@ from itertools import permutations
 
 import pytest
 from brownie.test import given, strategy
+from brownie import ETH_ADDRESS
 from hypothesis import settings
 from simulation import Kagla
 
@@ -30,19 +31,21 @@ def test_kagla_in_contract(
     # add initial pool liquidity
     # we add at an imbalance of +10% for each subsequent coin
     initial_liquidity = []
+    tx_param = {"from": alice}
     for coin, decimals in zip(wrapped_coins, wrapped_decimals):
         amount = st_seed_amount * 10 ** decimals + 1
-        coin._mint_for_testing(alice, amount, {"from": alice})
+        if coin != ETH_ADDRESS:
+            coin._mint_for_testing(alice, amount, {"from": alice})
+            assert coin.balanceOf(alice) >= amount
+            coin.approve(swap, amount // 10, {"from": alice})
+        else:
+            tx_param = {"from": alice, "value": amount // 10}
 
         if hasattr(coin, "set_exchange_rate"):
             rate = int(coin.get_rate() * (1 + 0.1 * len(initial_liquidity)))
             coin.set_exchange_rate(rate, {"from": alice})
-
-        assert coin.balanceOf(alice) >= amount
         initial_liquidity.append(amount // 10)
-        coin.approve(swap, amount // 10, {"from": alice})
-
-    swap.add_liquidity(initial_liquidity, 0, {"from": alice})
+    swap.add_liquidity(initial_liquidity, 0, tx_param)
 
     # initialize our python model using the same parameters as the contract
     balances = [swap.balances(i) for i in range(n_coins)]

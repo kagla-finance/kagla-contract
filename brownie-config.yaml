@@ -2,7 +2,7 @@
 networks:
   development:
     cmd_settings:
-      default_balance: 10000
+      default_balance: 1000000000000000
 
 # exclude non-core contracts from coverage analysis
 reports:
