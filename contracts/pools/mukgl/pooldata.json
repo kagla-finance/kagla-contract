@@ -1,0 +1,29 @@
+{
+  "lp_contract": "KaglaTokenV3",
+  "swap_address": "0xeB97BC7C4ca99Fa8078fF879905338517821B9F5",
+  "lp_token_address": "0x18BDb86E835E9952cFaA844EB923E470E832Ad58",
+  "gauge_addresses": ["0xa480B71b5aFBe28df9658C253e1E18A5EeDA131E"],
+  "lp_constructor": {
+    "name": "Kagla.fi KGL/muKGL",
+    "symbol": "3KGL"
+  },
+  "swap_constructor": {
+    "_A": 100,
+    "_fee": 4000000,
+    "_admin_fee": 5000000000
+  },
+  "coins": [
+    {
+      "name": "KGL",
+      "decimals": 18,
+      "tethered": false,
+      "underlying_address": "0x257f1a047948f73158dadd03eb84b34498bcdc60"
+    },
+    {
+      "name": "muKGL",
+      "decimals": 18,
+      "tethered": false,
+      "underlying_address": "0x5eaae8435b178d4677904430bac5079e73afa56e"
+    }
+  ]
+}
