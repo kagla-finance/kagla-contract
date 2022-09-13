@@ -1,6 +1,6 @@
 # @version 0.2.4
 
-# Pool for KGL/muKGL
+# Pool for LAY/muLAY
 
 from vyper.interfaces import ERC20
 
@@ -84,7 +84,7 @@ RATES: constant(uint256[N_COINS]) = [1000000000000000000, 1000000000000000000]
 MAX_ADMIN_FEE: constant(uint256) = 10 * 10 ** 9
 MAX_FEE: constant(uint256) = 5 * 10 ** 9
 MAX_A: constant(uint256) = 10 ** 6
-MAX_A_CHANGE: constant(uint256) = 100
+MAX_A_CHANGE: constant(uint256) = 10
 
 ADMIN_ACTIONS_DELAY: constant(uint256) = 3 * 86400
 MIN_RAMP_TIME: constant(uint256) = 86400
