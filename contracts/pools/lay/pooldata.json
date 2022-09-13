@@ -1,8 +1,8 @@
 {
   "lp_contract": "KaglaTokenV3",
-  "swap_address": "0xeB97BC7C4ca99Fa8078fF879905338517821B9F5",
-  "lp_token_address": "0x18BDb86E835E9952cFaA844EB923E470E832Ad58",
-  "gauge_addresses": ["0xa480B71b5aFBe28df9658C253e1E18A5EeDA131E"],
+  "swap_address": "0x4fD9011F0867e7e8AF7608Ad1BB969Da8b0aBa9B",
+  "lp_token_address": "0x5c71534Db6e54322943AD429209D97Fa25bBFcd2",
+  "gauge_addresses": ["0x8af463423696cd485e138d78b261cA95EbCB7F44"],
   "lp_constructor": {
     "name": "Kagla.fi LAY/muLAY",
     "symbol": "2LKGL"
