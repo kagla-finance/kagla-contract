@@ -15,7 +15,7 @@ REQUIRED_CONFIRMATIONS = 1
 
 # deployment settings
 # most settings are taken from `contracts/pools/{POOL_NAME}/pooldata.json`
-POOL_NAME = "ousd"
+POOL_NAME = "mukgl"
 
 # temporary owner address
 POOL_OWNER = "0x50414Ac6431279824df9968855181474c919a94B"
@@ -28,7 +28,7 @@ MINTER = "0x210c5BE93182d02A666392996f62244001e6E04d"
 
 
 def _tx_params():
-    return {"from": DEPLOYER, "required_confs": REQUIRED_CONFIRMATIONS}
+    return {"from": DEPLOYER, "required_confs": REQUIRED_CONFIRMATIONS, 'gas_price': 10000000000}
 
 
 def main():

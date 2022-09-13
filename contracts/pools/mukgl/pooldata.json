@@ -5,7 +5,7 @@
   "gauge_addresses": ["0xa480B71b5aFBe28df9658C253e1E18A5EeDA131E"],
   "lp_constructor": {
     "name": "Kagla.fi KGL/muKGL",
-    "symbol": "3KGL"
+    "symbol": "2KKGL"
   },
   "swap_constructor": {
     "_A": 100,
