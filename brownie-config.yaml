@@ -2,7 +2,7 @@
 networks:
   development:
     cmd_settings:
-      default_balance: 10000
+      default_balance: 1000000000000000
 
 # exclude non-core contracts from coverage analysis
 reports:
@@ -11,7 +11,7 @@ reports:
     - contracts/gauges/*.*
 
 dependencies:
-  - curvefi/curve-dao-contracts@1.2.0
+  - kagla-finance/kagla-dao-contracts@0.0.7
 
 hypothesis:
   phases:

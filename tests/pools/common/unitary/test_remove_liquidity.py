@@ -39,9 +39,9 @@ def test_remove_partial(
             pool_balance = coin.balanceOf(swap)
             alice_balance = coin.balanceOf(alice)
         assert alice_balance + pool_balance == amount
-
-    assert pool_token.balanceOf(alice) == n_coins * 10 ** 18 * base_amount - withdraw_amount
-    assert pool_token.totalSupply() == n_coins * 10 ** 18 * base_amount - withdraw_amount
+    balance = n_coins * 10 ** 18 * base_amount - withdraw_amount
+    assert pool_token.balanceOf(alice) == balance
+    assert pool_token.totalSupply() == balance
 
 
 @pytest.mark.itercoins("idx")

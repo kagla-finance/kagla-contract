@@ -3,14 +3,14 @@ name: Bug Report
 about: Report an error that you've encountered.
 ---
 <!--
-If you think you have found a security vulnerability a contract that has already been deployed, please report the vulnerability to security@curve.fi - you may be eligible for our bug bounty program.
+If you think you have found a security vulnerability a contract that has already been deployed, please report the vulnerability to security@kagla.fi - you may be eligible for our bug bounty program.
 
 PLEASE DO NOT LOG AN ISSUE MENTIONING THE VULNERABILITY.
 -->
 
 ### Environment information
 
-* `curve-contract` branch/commit: master/latest
+* `kagla-contract` branch/commit: master/latest
 * `brownie` Version: x.x.x
 * `ganache-cli` Version: x.x.x
 * OS: osx/linux/win

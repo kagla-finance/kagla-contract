@@ -1,0 +1,29 @@
+{
+  "lp_contract": "KaglaTokenV3",
+  "swap_address": "0x4fD9011F0867e7e8AF7608Ad1BB969Da8b0aBa9B",
+  "lp_token_address": "0x5c71534Db6e54322943AD429209D97Fa25bBFcd2",
+  "gauge_addresses": ["0x8af463423696cd485e138d78b261cA95EbCB7F44"],
+  "lp_constructor": {
+    "name": "Kagla.fi LAY/muLAY",
+    "symbol": "2LKGL"
+  },
+  "swap_constructor": {
+    "_A": 100,
+    "_fee": 4000000,
+    "_admin_fee": 5000000000
+  },
+  "coins": [
+    {
+      "name": "LAY",
+      "decimals": 18,
+      "tethered": false,
+      "underlying_address": "0xc4335B1b76fA6d52877b3046ECA68F6E708a27dd"
+    },
+    {
+      "name": "muLAY",
+      "decimals": 18,
+      "tethered": false,
+      "underlying_address": "0xDDF2ad1d9bFA208228166311FC22e76Ea7a4C44D"
+    }
+  ]
+}

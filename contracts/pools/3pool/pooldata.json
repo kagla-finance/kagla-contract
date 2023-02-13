@@ -1,31 +1,35 @@
 {
-    "lp_contract": "CurveTokenV2",
-    "swap_address": "0xbebc44782c7db0a1a60cb6fe97d0b483032ff1c7",
-    "lp_token_address": "0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490",
-    "gauge_addresses": ["0xbFcF63294aD7105dEa65aA58F8AE5BE2D9d0952A"],
-    "lp_constructor": {
-        "name": "Curve.fi DAI/USDC/USDT",
-        "symbol": "3Crv"
+  "lp_contract": "KaglaTokenV3",
+  "swap_address": "0xeB97BC7C4ca99Fa8078fF879905338517821B9F5",
+  "lp_token_address": "0x18BDb86E835E9952cFaA844EB923E470E832Ad58",
+  "gauge_addresses": ["0xa480B71b5aFBe28df9658C253e1E18A5EeDA131E"],
+  "lp_constructor": {
+    "name": "Kagla.fi DAI/USDC/USDT",
+    "symbol": "3KGL"
+  },
+  "swap_constructor": {
+    "_A": 2000,
+    "_fee": 4000000,
+    "_admin_fee": 5000000000
+  },
+  "coins": [
+    {
+      "name": "DAI",
+      "decimals": 18,
+      "tethered": false,
+      "underlying_address": "0x6De33698e9e9b787e09d3Bd7771ef63557E148bb"
     },
-    "coins": [
-        {
-            "name": "DAI",
-            "decimals": 18,
-            "tethered": false,
-            "underlying_address": "0x6b175474e89094c44da98b954eedeac495271d0f"
-        },
-        {
-            "name": "USDC",
-            "decimals": 6,
-            "tethered": false,
-            "underlying_address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
-
-        },
-        {
-            "name": "USDT",
-            "decimals": 6,
-            "tethered": true,
-            "underlying_address": "0xdac17f958d2ee523a2206206994597c13d831ec7"
-        }
-    ]
+    {
+      "name": "USDC",
+      "decimals": 6,
+      "tethered": false,
+      "underlying_address": "0x6a2d262D56735DbA19Dd70682B39F6bE9a931D98"
+    },
+    {
+      "name": "USDT",
+      "decimals": 6,
+      "tethered": false,
+      "underlying_address": "0x3795C36e7D12A8c252A20C5a7B455f7c57b60283"
+    }
+  ]
 }

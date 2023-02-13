@@ -1,12 +1,12 @@
-# curve-contract
+# kagla-contract
 
-Vyper contracts used in [Curve](https://www.curve.fi/) exchange pools.
+Vyper contracts used in [Kagla](https://www.kagla.finance/) exchange pools.
 
 ## Overview
 
-Curve is an exchange liquidity pool on Ethereum designed for extremely efficient stablecoin trading and low risk, supplemental fee income for liquidity providers, without an opportunity cost.
+Kagla is an exchange liquidity pool on Ethereum designed for extremely efficient stablecoin trading and low risk, supplemental fee income for liquidity providers, without an opportunity cost.
 
-Curve allows users to trade between correlated cryptocurrencies with a bespoke low slippage, low fee algorithm. The liquidity pool is also supplied to lending protocol where it generates additional income for liquidity providers.
+Kagla allows users to trade between correlated cryptocurrencies with a bespoke low slippage, low fee algorithm. The liquidity pool is also supplied to lending protocol where it generates additional income for liquidity providers.
 
 ## Testing and Development
 
@@ -17,28 +17,28 @@ Curve allows users to trade between correlated cryptocurrencies with a bespoke l
 * [ganache-cli](https://github.com/trufflesuite/ganache-cli) - tested with version [6.12.1](https://github.com/trufflesuite/ganache-cli/releases/tag/v6.12.1)
 * [brownie-token-tester](https://github.com/iamdefinitelyahuman/brownie-token-tester) - tested with version [0.1.0](https://github.com/iamdefinitelyahuman/brownie-token-tester/releases/tag/v0.1.0)
 
-Curve contracts are compiled using [Vyper](https://github.com/vyperlang/vyper), however installation of the required Vyper versions is handled by Brownie.
+Kagla contracts are compiled using [Vyper](https://github.com/vyperlang/vyper), however installation of the required Vyper versions is handled by Brownie.
 
 ### Setup
 
 To get started, first create and initialize a Python [virtual environment](https://docs.python.org/3/library/venv.html). Next, clone the repo and install the developer dependencies:
 
 ```bash
-git clone https://github.com/curvefi/curve-contract.git
-cd curve-contract
+git clone https://github.com/kagla-finance/kagla-contract.git
+cd kagla-contract
 pip install -r requirements.txt
 ```
 
 ### Organization and Workflow
 
-* New Curve pools are built from the contract templates at [`contracts/pool-templates`](contracts/pool-templates)
+* New Kagla pools are built from the contract templates at [`contracts/pool-templates`](contracts/pool-templates)
 * Once deployed, the contracts for a pool are added to [`contracts/pools`](contracts/pools)
 
-See the documentation within [`contracts`](contracts) and it's subdirectories for more detailed information on how to get started developing on Curve.
+See the documentation within [`contracts`](contracts) and it's subdirectories for more detailed information on how to get started developing on Kagla.
 
 ### Running the Tests
 
-The [test suite](tests) contains common tests for all Curve pools, as well as unique per-pool tests. To run the entire suite:
+The [test suite](tests) contains common tests for all Kagla pools, as well as unique per-pool tests. To run the entire suite:
 
 ```bash
 brownie test
@@ -75,13 +75,3 @@ To deploy a new pool:
     ```
 
     Be sure to open a pull request that adds the deployment addresses to the pool `README.md`.
-
-## Audits and Security
-
-Curve smart contracts have been audited by Trail of Bits. These audit reports are made available on the [Curve website](https://www.curve.fi/audits).
-
-There is also an active [bug bounty](https://www.curve.fi/bugbounty) for issues which can lead to substantial loss of money, critical bugs such as a broken live-ness condition, or irreversible loss of funds.
-
-## License
-
-(c) Curve.Fi, 2020 - [All rights reserved](LICENSE).

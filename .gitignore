@@ -1,8 +1,8 @@
 __pycache__
 .history
 .hypothesis/
-build/
 reports/
 .venv/
 venv/
 .vscode/
+build/tests.json

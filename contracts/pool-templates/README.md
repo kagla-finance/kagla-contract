@@ -1,15 +1,15 @@
-# curve-contract/contracts/pool-templates
+# kagla-contract/contracts/pool-templates
 
 Contract templates used as the basis for future pools.
 
 ## Subdirectories
 
-Each subdirectory holds contracts and other files specific to a single Curve pool template.
+Each subdirectory holds contracts and other files specific to a single Kagla pool template.
 
 - [`a`]: Pool implementation with aToken-style lending (i.e., interest accrues as balance increases)
 - [`base`]: Minimal pool implementation optimized for no lending
 - [`eth`]: Pool implementation with ETH
-- [`meta`]: Metapool implementation for swapping base assets against a Curve LP token
+- [`meta`]: Metapool implementation for swapping base assets against a Kagla LP token
 - [`y`]: Pool implementation with yearn-style lending (i.e., interest accrues as rate increases)
 
 ## Development
@@ -51,4 +51,4 @@ The layout of a template's `pooldata.json` is similar to that of an actual pool,
 
 _Note_: For `y` and `a` pools, the implementor may have to remove/change some small parts in the template code which is specific to `yearn` and `aave` pools.
 
-The `rate_calcultor_address` is used when adding a pool to the Curve Pool Registry.
+The `rate_calcultor_address` is used when adding a pool to the Kagla Pool Registry.

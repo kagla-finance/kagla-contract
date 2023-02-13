@@ -1,6 +1,6 @@
-# curve-contract/tests/fixtures
+# kagla-contract/tests/fixtures
 
-Pytest fixtures used in Curve's test suite.
+Pytest fixtures used in Kagla's test suite.
 
 ## Files
 
@@ -25,7 +25,7 @@ Session scoped convenience fixtures providing access to specific unlocked accoun
 
 Module scoped deployment fixtures for stablecoins and pool LP tokens.
 
-* `pool_token`: [`CurveToken`](../../contracts/tokens) deployment for the active pool.
+* `pool_token`: [`KaglaToken`](../../contracts/tokens) deployment for the active pool.
 * `underlying_coins`: A list of mocked token contracts representing the underlying coins in the active pool. When the pool being tested is a metapool, this list includes the underlying assets for the base pool - NOT the base pool LP token.
 * `wrapped_coins`: A list of mocked token contracts representing the wrapped coins in the active pool. The contract used is determined based on `pooldata.json` for the active pool. For pools without lending, these are the same deployments as `underlying_coins`.
 
